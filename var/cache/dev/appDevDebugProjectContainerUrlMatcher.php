@@ -107,6 +107,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // app_blog_post
+        if (0 === strpos($pathinfo, '/post') && preg_match('#^/post(?:/(?P<article>\\d+))?$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_blog_post')), array (  'article' => '42',  '_controller' => 'AppBundle\\Controller\\BlogController::postAction',));
+        }
+
         // homepage
         if ('' === $trimmedPathinfo) {
             $ret = array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
