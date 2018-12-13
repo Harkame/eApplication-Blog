@@ -1,3 +1,4 @@
 vendor/
 var/logs/
+var/cache/
 .idea/
