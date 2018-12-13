@@ -142,6 +142,6 @@ class __TwigTemplate_42ccb518cfa3b407eec6c235786a034782040694cbb95a040356157f89f
 {% block panel %}
     {{ render(path('_profiler_router', { token: token })) }}
 {% endblock %}
-", "@WebProfiler/Collector/router.html.twig", "/auto_home/ldaviaud/workspace/eApplication-Blog/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Collector/router.html.twig");
+", "@WebProfiler/Collector/router.html.twig", "/auto_home/bvolle/MASTER_2/EAPPLICATION/blog/eApplication-Blog/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Collector/router.html.twig");
     }
 }

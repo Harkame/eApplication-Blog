@@ -79,6 +79,6 @@ at {{ trace.class ~ trace.type ~ trace.function }}({{ trace.args|format_args_as_
 {% if trace.file|default('') is not empty and trace.line|default('') is not empty %}
   {{- trace.function ? '\\n     (' : 'at '}}{{ trace.file|format_file(trace.line)|striptags|replace({ (' at line ' ~ trace.line): '' }) }}:{{ trace.line }}{{ trace.function ? ')' }}
 {%- endif %}
-", "@Twig/Exception/trace.txt.twig", "/auto_home/ldaviaud/workspace/eApplication-Blog/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/trace.txt.twig");
+", "@Twig/Exception/trace.txt.twig", "/auto_home/bvolle/MASTER_2/EAPPLICATION/blog/eApplication-Blog/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/trace.txt.twig");
     }
 }
