@@ -31,21 +31,21 @@ class Post
     /**
      * @var string
      *
-     * @ORM\Column(name="url_alias", type="string", length=255)
+     * @ORM\Column(name="alias_url", type="string", length=255)
      */
-    private $urlAlias;
+    private $aliasUrl;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="content", type="string", length=255)
+     * @ORM\Column(name="content", type="text")
      */
     private $content;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="published", type="string", length=255)
+     * @ORM\Column(name="published", type="datetime")
      */
     private $published;
 
@@ -85,27 +85,27 @@ class Post
     }
 
     /**
-     * Set urlAlias
+     * Set aliasUrl
      *
-     * @param string $urlAlias
+     * @param string $aliasUrl
      *
      * @return Post
      */
-    public function setUrlAlias($urlAlias)
+    public function setAliasUrl($aliasUrl)
     {
-        $this->urlAlias = $urlAlias;
+        $this->aliasUrl = $aliasUrl;
 
         return $this;
     }
 
     /**
-     * Get urlAlias
+     * Get aliasUrl
      *
      * @return string
      */
-    public function getUrlAlias()
+    public function getAliasUrl()
     {
-        return $this->urlAlias;
+        return $this->aliasUrl;
     }
 
     /**
@@ -135,7 +135,7 @@ class Post
     /**
      * Set published
      *
-     * @param string $published
+     * @param \DateTime $published
      *
      * @return Post
      */
@@ -149,7 +149,7 @@ class Post
     /**
      * Get published
      *
-     * @return string
+     * @return \DateTime
      */
     public function getPublished()
     {
