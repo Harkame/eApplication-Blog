@@ -1,18 +1,19 @@
 {% extends 'base.html.twig' %}
 
+
+
+
+{% block javascripts %}
+{% endblock %}
+
 {% block body %}
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Start Bootstrap</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
-            </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
@@ -21,21 +22,20 @@
                         <a class="nav-link" href="/post">Sample Post</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="/Connect">Connection</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <header class="masthead">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-10 mx-auto">
                     <div class="site-heading">
-                        <h1>Clean Blog</h1>
-                        <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                        <h1>Super Blog</h1>
                     </div>
                 </div>
             </div>
@@ -43,36 +43,48 @@
     </header>
 
     <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Man must explore, and this is exploration at its greatest
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Problems look mighty small from 150 miles up
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by
-                        <a href="#">Start Bootstrap</a>
-                        on September 24, 2018</p>
-                </div>
-                <hr>
-                <div class="post-preview">
+
+
+<script>
+    function UpNbPosts(x) {
+        x = x + 3;
+        console.log(x);
+    }
+</script>
+
+{%  for post in posts |slice(0,nbPosts) %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-preview">
+                <a href="post/{{ post.aliasUrl }}">
+                    <h2> {{ post.title }} </h2>
+
+                </a>
+                <p class="post-meta">Posted by
+                    <a href="#">Start Bootstrap</a>
+                    on {{ post.published | date }}</p>
+            </div>
+            <hr>
+            <div class="post-preview">
             </div>
         </div>
 
     </div>
 
+
+{%  endfor %}
+
     <hr>
     <!-- Pager -->
     <div class="clearfix">
-        <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+        <a class="btn btn-primary float-right" onClick="UpNbPosts({{ nbPosts }})">Older Posts </a>
     </div>
 
     <hr>
+
 
     <footer>
         <div class="container">
@@ -110,6 +122,8 @@
         </div>
     </footer>
 {% endblock %}
+
+
 
 {% block stylesheets %}
 <style>
