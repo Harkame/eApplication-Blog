@@ -12,21 +12,27 @@ use AppBundle\Entity\Post;
 class BlogController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/{page}", name="homepage", requirements = {"page" = "\d+"} )
      */
-    public function indexAction()
+    public function indexAction(int $page)
     {
-        $nbPosts = 10;
+        $nbPostsPage = 3;
+
+        $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy([], ['published' => 'DESC']);
 
 
+        $nbPages = ceil(count($posts)/($nbPostsPage));
 
-
-            $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy([], ['published' => 'DESC']);
-
+        $firstPost =  ($nbPostsPage * $page) - $nbPostsPage + 1;
+        $lastPost =  $nbPostsPage * $page;
 
 
         return $this->render('default/index.html.twig', array('posts' => $posts,
-            'nbPosts' => $nbPosts));
+            'nbPosts' => $nbPostsPage,
+            'nbPages' => $nbPages,
+            'page' => $page,
+            'firstPost' => $firstPost,
+            'lastPost' => $lastPost));
 
         /*    [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,

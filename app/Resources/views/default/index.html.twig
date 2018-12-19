@@ -13,7 +13,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="">Home</a>
+                        <a class="nav-link" href="{{ path('homepage', {'page' : 1} ) }} ">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
@@ -22,7 +22,7 @@
                         <a class="nav-link" href="/post">Sample Post</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Connect">Connection</a>
+                        <a class="nav-link" href="/connect">Connexion</a>
                     </li>
                 </ul>
             </div>
@@ -45,14 +45,9 @@
     <!-- Main Content -->
 
 
-<script>
-    function UpNbPosts(x) {
-        x = x + 3;
-        console.log(x);
-    }
-</script>
 
-{%  for post in posts |slice(0,nbPosts) %}
+
+{%  for post in posts |slice(firstPost,lastPost) %}
 
 
 <div class="container">
@@ -79,9 +74,18 @@
 
     <hr>
     <!-- Pager -->
+
     <div class="clearfix">
-        <a class="btn btn-primary float-right" onClick="UpNbPosts({{ nbPosts }})">Older Posts </a>
+        <a class="btn btn-primary float-right" href="{{ path('homepage', {'page' :  page + 1} ) }} ">Older Posts </a>
     </div>
+
+    <script>
+        function OlderPosts() {
+            let x = {{ page }};
+             console.log(x);
+
+        }
+    </script>
 
     <hr>
 
