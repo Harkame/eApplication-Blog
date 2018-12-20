@@ -12,8 +12,22 @@ INSERT INTO POST (title, aliasUrl,Content, Published) VALUES (
                                       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non urna ut ipsum rutrum porttitor. Nunc vitae feugiat ipsum. Vestibulum non faucibus mi. Duis ac leo sed libero placerat consequat. Mauris nec nisl imperdiet, fringilla nulla vel, tincidunt erat. Fusce bibendum sagittis lacinia. Vestibulum et suscipit purus, quis fermentum nulla. In commodo ante a metus facilisis, vitae tempus leo gravida. Vivamus sed arcu accumsan, fringilla mi ut, interdum nisl. Praesent malesuada at dui sit amet pulvinar. Sed iaculis tellus eu metus egestas efficitur.",
                                       "2018-12-18 16:17:16"
                                       )
-        
 
-             
-            
+https://symfony.com/doc/current/bundles/FOSUserBundle/index.html
 
+https://openclassrooms.com/fr/courses/3619856-developpez-votre-site-web-avec-le-framework-symfony/3623841-creer-des-formulaires-avec-symfony
+
+    {% form_theme form 'form/field.html.twig' %}
+    {% block form_row %}
+        {% spaceless %}
+            <div class="form_row">
+                {{ form_label(form) }}
+                {{ form_errors(form) }}
+                {{ form_widget(form) }}
+            </div>
+        {% endspaceless %}
+    {% endblock form_row %}
+
+    https://www.supinfo.com/articles/single/5972-installer-configurer-fosuserbundle-symfony-3
+
+https://symfony.com/doc/3.4/security/form_login_setup.html
