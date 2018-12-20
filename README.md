@@ -3,7 +3,7 @@
 + Baptiste VOLLE
 
 # URL
-louis-daviaud-blog.herokuapp.com
+https://louis-daviaud-blog.herokuapp.com/
 
 # Commentaire
 
