@@ -2,6 +2,8 @@
 
 namespace AppBundle\Repository;
 
+use Doctrine\ORM\Tools\Pagination\Paginator;
+
 /**
  * PostRepository
  *
@@ -10,4 +12,26 @@ namespace AppBundle\Repository;
  */
 class PostRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getPosts($page = 1, $maxperpage = 3){
+
+        $q = $this->_em->createQueryBuilder()
+            ->select('post')
+            ->from('AppBundle:Post','post')
+            ->orderBy('post.published','DESC');
+
+        $q->setFirstResult(($page - 1) * $maxperpage)
+            ->setMaxResults($maxperpage);
+
+        return new Paginator($q);
+    }
+
+    public function countPosts(){
+        $q = $this->_em->createQueryBuilder()
+            ->select('count(post)')
+            ->from('AppBundle:Post', 'post');
+
+        $count = $q->getQuery()->getSingleScalarResult();
+
+        return $count;
+    }
 }

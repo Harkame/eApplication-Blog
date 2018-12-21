@@ -4,15 +4,15 @@
 
 {% block body %}
     <h1>
-        {{article[0].title}}
+        {{post[0].title}}
     </h1>
     <p>
-        {{ article[0].content }}
+        {{ post[0].content }}
     </p>
 
     <br/>
     <br/>
     <br/>
 
-    Publié le {{ article[0].published | date }}
+    Publié le {{ post[0].published | date }}
 {% endblock %}

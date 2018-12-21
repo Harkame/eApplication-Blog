@@ -1,32 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {% for post in posts |slice(firstPost,lastPost) %}
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="post-preview">
-                        <a href="post/{{ post.aliasUrl }}">
-                            <h2>
-                                {{ post.title }}
-                            </h2>
-
-                        </a>
-                        <p class="post-meta">Posted by
-                            <a href="#">
-                                Start Bootstrap
-                            </a>
-                            on {{ post.published | date }}
-                        </p>
-                    </div>
-                    <hr>
-                    <div class="post-preview">
-                    </div>
-                </div>
+    {% for post in posts %}
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title">{{ post.getTitle() }}</h2>
+                <p class="card-text article-text">{{ post.getContent() }}</p>
+                <a class="btn btn-primary" href="post/{{ post.getAliasUrl() }}">Details</a>
+            </div>
+            <div class="card-footer text-muted">
+                Posted on {{ post.getPublished() | date('d-m-Y h:i:s')}}
             </div>
         </div>
-    {%  endfor %}
-
+    {% endfor %}
 
     {% form_theme form 'form/field.html.twig' %}
     {% block form_row %}

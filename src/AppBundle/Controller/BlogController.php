@@ -11,18 +11,25 @@ use AppBundle\Entity\Post;
 
 use AppBundle\Form\PostType;
 
+use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Tools\Pagination\Paginator;
+
 class BlogController extends Controller
 {
     /**
      * @Route("/{page}", name="homepage", requirements = {"page" = "\d+"} )
      */
-    public function indexAction(int $page, Request $request)
+    //
+    public function homeAction($page, Request $request)
     {
         $nbPostsPage = 3;
 
-        $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy([], ['published' => 'DESC']);
+        //$posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy([], ['published' => 'DESC']);
 
-        $nbPages = ceil(count($posts)/($nbPostsPage));
+        $nbPages = 3;//ceil(count($posts)/($nbPostsPage));
+
+        $posts_repository = $this->getDoctrine()->getRepository('AppBundle:Post');
+        $posts = $posts_repository->getPosts($page);
 
         $firstPost =  ($nbPostsPage * $page) - $nbPostsPage + 1;
         $lastPost =  $nbPostsPage * $page;
@@ -34,6 +41,8 @@ class BlogController extends Controller
 
         $form = $this->createForm(PostType::class, $post);
         $form->handleRequest($request);
+
+
         if ($form->isSubmitted() && $form->isValid())
         {
             $entityManager = $this->getDoctrine()->getManager();
@@ -63,7 +72,7 @@ class BlogController extends Controller
     /**
      * @Route("/post/{url_alias}" )
      */
-    public function PostAction(string $url_alias)
+    public function postDetailsAction($url_alias)
     {
         //$this->createAction();
 
@@ -75,7 +84,7 @@ class BlogController extends Controller
             ));
         else
             return $this->render('default/post.html.twig', array(
-                'article' => $post
+                'post' => $post
             ));
     }
 
