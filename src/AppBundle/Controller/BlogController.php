@@ -17,7 +17,17 @@ use Doctrine\ORM\Tools\Pagination\Paginator;
 class BlogController extends Controller
 {
     /**
-     * @Route("/{page}", name="homepage", requirements = {"page" = "\d+"} )
+     * @Route("")
+     */
+    public function indexAction()
+    {
+        $page = 1;
+        return $this->redirectToRoute('homepage', array('page' => $page));
+    }
+
+
+    /**
+     * @Route("/{page}", name="homepage", requirements = {"page" = "\d+"}, defaults={1} )
      */
     //
     public function homeAction($page, Request $request)

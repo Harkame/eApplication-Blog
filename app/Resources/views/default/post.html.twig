@@ -3,16 +3,59 @@
 {% block title %}AppBundle:Blog:post{% endblock %}
 
 {% block body %}
-    <h1>
-        {{post[0].title}}
-    </h1>
-    <p>
-        {{ post[0].content }}
-    </p>
+<div class="container">
+    <div class="row">
+        <div class="custom-post col-lg">
+            <h1>
+                {{post[0].title}}
+            </h1>
+            <hr>
+            <p>
+                {{ post[0].content }}
+            </p>
+            <span>Publié le {{ post[0].published | date }}</span>
 
-    <br/>
-    <br/>
-    <br/>
+            <a href="/1" id="custom-back">
+            <i class="fas fa-arrow-left"></i>{{ 'back' | trans }}
+            </a>
+        </div>
+    </div>
+</div>
 
-    Publié le {{ post[0].published | date }}
+
+
+{% block stylesheets %}
+    <style>
+        .custom-post h1{
+            margin-bottom: 25px;
+            margin-top: 25px;
+            font-weight: 500;
+        }
+        .custom-post hr {
+            margin-bottom: 25px;
+        }
+        .custom-post p{
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        .custom-post span {
+            font-size: 13px;
+            color: dodgerblue;
+        }
+
+        #custom-back{
+            float: right;
+            font-size: 20px;
+            color: darkgrey;
+            text-decoration: none;
+        }
+        #custom-back i{
+            font-size: 16px;
+            margin-right: 5px;
+        }
+
+
+</style>
+{% endblock %}
+
 {% endblock %}

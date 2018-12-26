@@ -1,5 +1,7 @@
 {% extends "@FOSUser/layout.html.twig" %}
 
 {% block fos_user_content %}
-{% include "@FOSUser/Group/list_content.html.twig" %}
+    {% block body %}
+    {% include "@FOSUser/Group/list_content.html.twig" %}
+    {% endblock %}
 {% endblock fos_user_content %}

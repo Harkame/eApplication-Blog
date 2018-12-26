@@ -2,14 +2,16 @@
 
 {% block body %}
     {% for post in posts %}
-        <div class="card mb-4">
-            <div class="card-body">
-                <h2 class="card-title">{{ post.getTitle() }}</h2>
-                <p class="card-text article-text">{{ post.getContent() }}</p>
-                <a class="btn btn-primary" href="post/{{ post.getAliasUrl() }}">Details</a>
-            </div>
-            <div class="card-footer text-muted">
-                Posted on {{ post.getPublished() | date('d-m-Y h:i:s')}}
+        <div class="container">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.getTitle() }}</h2>
+                    <p class="card-text article-text">{{ post.getContent() }}</p>
+                    <a class="btn btn-primary" href="post/{{ post.getAliasUrl() }}">Details</a>
+                </div>
+                <div class="card-footer text-muted">
+                    Posted on {{ post.getPublished() | date('d-m-Y h:i:s')}}
+                </div>
             </div>
         </div>
     {% endfor %}
@@ -17,8 +19,10 @@
     {% form_theme form 'form/field.html.twig' %}
     {% block form_row %}
         {% spaceless %}
-            <div class="form_row">
-                {{ form(form) }}
+            <div class="container">
+                <div class="form_row">
+                    {{ form(form) }}
+                </div>
             </div>
         {% endspaceless %}
     {% endblock form_row %}
@@ -29,13 +33,7 @@
         <a class="btn btn-primary float-right" href="{{ path('homepage', {'page' :  page + 1} ) }} ">Older Posts </a>
     </div>
 
-    <script>
-        function OlderPosts() {
-            let x = {{ page }};
-             console.log(x);
 
-        }
-    </script>
 
     <hr>
 
