@@ -14,6 +14,7 @@ use AppBundle\Form\PostType;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 
+
 class BlogController extends Controller
 {
     /**
@@ -62,6 +63,19 @@ class BlogController extends Controller
             //return $this->redirectToRoute('home');
         }
 
+        $images = array();
+        foreach ($posts as $key => $postiterator) {
+            //$resource = $postiterator->getImage();
+            //gettype($resource);
+
+            //$streamcontent = stream_get_contents($resource);
+            //$images[$key] = base64_encode($streamcontent);
+
+            //TODO
+        }
+
+
+
         return $this->render('default/home.html.twig',
             array(
                 'posts' => $posts,
@@ -70,7 +84,8 @@ class BlogController extends Controller
                 'page' => $page,
                 'firstPost' => $firstPost,
                 'lastPost' => $lastPost,
-                'form' => $form->createView()
+                'form' => $form->createView(),
+            '   images' => $images,
             )
         );
 

@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {% for post in posts %}
+    {% for key, post in posts %}
         <div class="container">
             <div class="card mb-4">
+                <img alt="Embedded Image" src="data:image/jpg;base64,{{ post.getImage() }}" />
                 <div class="card-body">
                     <h2 class="card-title">{{ post.getTitle() }}</h2>
                     <p class="card-text article-text">{{ post.getContent() }}</p>
@@ -17,6 +18,9 @@
     {% endfor %}
 
     {% form_theme form 'form/field.html.twig' %}
+
+
+    <h1 class="my-4 title">Article creation</h1>
     {% block form_row %}
         {% spaceless %}
             <div class="container">
