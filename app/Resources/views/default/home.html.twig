@@ -11,7 +11,7 @@
                     <a class="btn btn-primary" href="post/{{ post.getAliasUrl() }}">Details</a>
                 </div>
                 <div class="card-footer text-muted">
-                    Posted on {{ post.getPublished() | date('d-m-Y h:i:s')}}
+                    Posted on {{ post.getPublished() | date('d-m-Y h:i:s')}}K
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
                     {{ form(form) }}
                 </div>
             </div>
-        {% endspaceless %}
+        {% endspaceless %}K
     {% endblock form_row %}
 
     <hr>
