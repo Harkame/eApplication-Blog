@@ -47,7 +47,6 @@ class BlogController extends Controller
 
         $post = new Post();
 
-        $post->setAliasUrl('titi');
         $post->setPublished( new \DateTime());
 
         $form = $this->createForm(PostType::class, $post);
@@ -56,6 +55,11 @@ class BlogController extends Controller
 
         if ($form->isSubmitted() && $form->isValid())
         {
+
+            $post->setAliasUrl($post->getTitle());
+            if($post->getImageUrl() === null || $post->getImageUrl() === '')
+                $post->setImageUrl('default_image.jpg');
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($post);
             $entityManager->flush();
@@ -86,13 +90,11 @@ class BlogController extends Controller
      */
     public function postDetailsAction($url_alias)
     {
-        //$this->createAction();
-
-        $post = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array('aliasUrl' => $url_alias));
+        $post = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array('alias_url' => $url_alias));
 
         if(!$post)
             return $this->render('default/post.html.twig', array(
-                'article' => 'not found'
+                'post' => 'not found'
             ));
         else
             return $this->render('default/post.html.twig', array(
@@ -106,21 +108,5 @@ class BlogController extends Controller
     public function aboutAction()
     {
         return $this->render('default/about.html.twig', array());
-    }
-
-    public function createAction()
-    {
-        $post = new Post();
-
-        $post->setTitle('toto');
-        $post->setAliasUrl('titi');
-        $post->setContent('Text content');
-        $post->setPublished( new \DateTime());
-
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($post);
-        $em->flush();
-
-        return new Response('Id du post');
     }
 }

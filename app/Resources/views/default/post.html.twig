@@ -18,6 +18,11 @@
             <a href="/1" id="custom-back">
             <i class="fas fa-arrow-left"></i>{{ 'back' | trans }}
             </a>
+
+            <div class="card-footer">
+                <a href="/post/edit/{{ post[0].getId() }}" class="btn btn-warning float-right mx-1">Edit</a>
+                <a href="/post/delete/{{ post[0].getId() }}" class="btn btn-danger float-right mx-1">Delete</a>
+            </div>
         </div>
     </div>
 </div>
