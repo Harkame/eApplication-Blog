@@ -21,7 +21,7 @@ class PostType extends AbstractType
         $builder
             ->add('title', TextType::class)
             ->add('content', TextareaType::class)
-            ->add('image', FileType::class)
+            //->add('image', FileType::class)
             ->add('save', SubmitType::class);
     }
 

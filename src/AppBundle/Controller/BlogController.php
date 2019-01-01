@@ -63,18 +63,6 @@ class BlogController extends Controller
             //return $this->redirectToRoute('home');
         }
 
-        $images = array();
-        foreach ($posts as $key => $postiterator) {
-            //$resource = $postiterator->getImage();
-            //gettype($resource);
-
-            //$streamcontent = stream_get_contents($resource);
-            //$images[$key] = base64_encode($streamcontent);
-
-            //TODO
-        }
-
-
 
         return $this->render('default/home.html.twig',
             array(
@@ -84,8 +72,7 @@ class BlogController extends Controller
                 'page' => $page,
                 'firstPost' => $firstPost,
                 'lastPost' => $lastPost,
-                'form' => $form->createView(),
-            '   images' => $images,
+                'form' => $form->createView()
             )
         );
 
