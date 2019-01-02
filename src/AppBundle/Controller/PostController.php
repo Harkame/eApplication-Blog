@@ -5,7 +5,10 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
+use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Post;
+
+use AppBundle\Form\PostType;
 
 class PostController extends Controller
 {
@@ -39,11 +42,31 @@ class PostController extends Controller
     }
 
     /**
-     * @Route("/post/delete/{post_id}" )
+     * @Route("/post/edit/{post_id}" )
      */
-    public function postEditAction($post_id)
+    public function postEditAction($post_id, Request $request)
+
     {
-        //TODO
-        return $this->redirectToRoute('homepage', array('page' => 1));
+        $entityManager = $this->getDoctrine()->getManager();
+        $post = $entityManager->getRepository(Post::class)->find($post_id);
+
+
+        $form = $this->createForm(PostType::class, $post);
+        $form->handleRequest($request);
+
+
+
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $post = $form->getData();
+            $entityManager->flush();
+        }
+
+
+
+        return $this->render('default/editPost.html.twig', array(
+            'post' => $post,
+            'form' => $form->createView()
+        ));
     }
 }

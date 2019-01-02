@@ -56,7 +56,11 @@ class BlogController extends Controller
         if ($form->isSubmitted() && $form->isValid())
         {
 
-            $post->setAliasUrl($post->getTitle());
+            $user_ = $this->getUser();
+            $username = $user_->getUsername();
+
+                $post->setAuthor($username);
+                $post->setAliasUrl($post->getTitle());
             if($post->getImageUrl() === null || $post->getImageUrl() === '')
                 $post->setImageUrl('default_image.jpg');
 
@@ -90,7 +94,17 @@ class BlogController extends Controller
      */
     public function postDetailsAction($url_alias)
     {
+
         $post = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array('alias_url' => $url_alias));
+
+        $user_ = $this->getUser();
+        if ($user_) {
+            $username = $user_->getUsername();
+        }
+        else {
+            $username = null;
+        }
+
 
         if(!$post)
             return $this->render('default/post.html.twig', array(
@@ -98,7 +112,8 @@ class BlogController extends Controller
             ));
         else
             return $this->render('default/post.html.twig', array(
-                'post' => $post
+                'post' => $post,
+                'username' => $username
             ));
     }
 

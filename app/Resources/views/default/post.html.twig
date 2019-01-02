@@ -20,8 +20,10 @@
             </a>
 
             <div class="card-footer">
-                <a href="/post/edit/{{ post[0].getId() }}" class="btn btn-warning float-right mx-1">Edit</a>
-                <a href="/post/delete/{{ post[0].getId() }}" class="btn btn-danger float-right mx-1">Delete</a>
+                {% if  username  is same as (post[0].author) %}
+                <a href="/post/edit/{{ post[0].getId() }}" class="custom-button-edit btn btn-warning float-right mx-1">Edit</a>
+                {% endif %}
+                <a href="/post/delete/{{ post[0].getId() }}" class="custom-button btn btn-danger float-right mx-1">Delete</a>
             </div>
         </div>
     </div>
@@ -49,6 +51,7 @@
         }
 
         #custom-back{
+
             float: right;
             font-size: 20px;
             color: darkgrey;
@@ -57,6 +60,42 @@
         #custom-back i{
             font-size: 16px;
             margin-right: 5px;
+        }
+
+        .custom-button {
+             border-radius: 5px;
+             border: none !important;
+             padding: 8px 22px ;
+             box-shadow: none !important;
+             color: white;
+             font-size: 14px;
+             font-weight: 500;
+             font-family: inherit !important;
+             cursor: pointer;
+             transition: 0.3s;
+             vertical-align: top;
+             text-align: right;
+         }
+        .custom-button:hover, .custom-button:focus {
+            background: darkred;
+        }
+
+        .custom-button-edit {
+            border-radius: 5px;
+            border: none !important;
+            padding: 8px 22px ;
+            box-shadow: none !important;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: inherit !important;
+            cursor: pointer;
+            transition: 0.3s;
+            vertical-align: top;
+            text-align: right;
+        }
+        .custom-button-edit:hover, .custom-button-edit:focus {
+            background: #ffd902;
         }
 
 

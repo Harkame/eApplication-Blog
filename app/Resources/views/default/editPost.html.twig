@@ -1,0 +1,97 @@
+{% extends "base.html.twig" %}
+
+
+{% block body %}
+
+    <div class="container">
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="custom-post col-lg">
+                    <div class="input-field">
+                        {{ form_widget(form.title, {'attr': {'value': post.title}}) }}
+                    </div>
+
+                <hr>
+                <div>
+                    {{ form_widget(form.content, {'attr': {'value': post.content}}) }}
+                </div>
+
+                <div>
+                   {{  form_widget(form.image_url,{'attr': {'value': post.getImageUrl()}}) }}
+                </div>
+                <a href="/1" id="custom-back">
+                    <i class="fas fa-arrow-left"></i>{{ 'back' | trans }}
+                </a>
+
+                <div class="card-footer">
+                    {{ form_widget(form.save) }}
+                    {#<button type="submit" class="custom-button">Save</button>#}
+                </div>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+
+{% block stylesheets %}
+<style>
+    .card-footer button {
+        border-radius: 5px;
+        border: none !important;
+        padding: 5px 20px ;
+        box-shadow: none !important;
+        background: dodgerblue;
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: inherit !important;
+        cursor: pointer;
+        transition: 0.3s;
+        vertical-align: top;
+        text-align: right;
+    }
+
+
+    .card-footer button:hover, .card-footer button:focus {
+        background: royalblue;
+    }
+
+    #post_content {
+        background: white;
+
+        resize:vertical; max-height:200px; min-height:200px;
+        resize:horizontal; max-width:800px; min-width:800px;
+        display: block;
+        border-radius: 5px;
+        padding: 10px 15px;
+        border: 1px solid gainsboro;
+        font-size: 18px;
+
+    }
+
+    #post_title {
+        display: block;
+        background-color: white !important;
+        border-radius: 5px;
+        padding: 10px 15px;
+        border: 1px solid gainsboro;
+        font-size: 18px;
+
+    }
+
+    #post_image_url {
+        margin-top:5px;
+        margin-bottom: 20px;
+        display: block;
+        background-color: white !important;
+        border-radius: 5px;
+        padding: 10px 15px;
+        border: 1px solid gainsboro;
+        font-size: 18px;
+    }
+</style>
+
+{% endblock %}
+
+{% endblock %}
+
+

@@ -2,44 +2,46 @@
 
 <div class="container">
     <div class="row">
-        <form class="formulaire">
-        {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+        <form class="formulaire" action="{{ path('fos_user_registration_register')  }}" method = "post">
+            {#{{ form_start(form, {'method': 'post', 'attr': {'class': 'fos_user_registration_register'}}) }}#}
                 <h2 class="heading"> {{ 'Register' |trans }} </h2>
                 <div class="custom-input">
-                    {#{{ form_label(form.username) }} #}
-                    <label for="Username"> {{  'Username' |trans }}</label>
+                    {{ form_label(form.username) }}
+                    {#<label for="Username"> {{  'Username' |trans }}</label>#}
                     {{ form_widget(form.username) }}
                     {{ form_errors(form.username) }}
                 </div>
                 <div class="custom-input">
-                    {#{{ form_label(form.email) }}#}
-                    <label for="Username"> {{  'email address' |trans }}</label>
+                    {{ form_label(form.email) }}
+                    {#<label for="Username"> {{  'email address' |trans }}</label>#}
                     {{ form_widget(form.email) }}
                     {{ form_errors(form.email) }}
                 </div>
 
                 <div class="custom-input">
-                    {#{{ form_label(form.plainPassword.first) }}#}
-                    <label for="Username"> {{  'Password' |trans }}</label>
+                    {{ form_label(form.plainPassword.first) }}
+                    {#<label for="Username"> {{  'Password' |trans }}</label>#}
                     {{ form_widget(form.plainPassword.first) }}
                     {{ form_errors(form.plainPassword.first) }}
                 </div>
                 <div class="custom-input">
-                    {#{{ form_label(form.plainPassword.second) }}#}
-                    <label for="Username"> {{  'Confirm password' |trans }}</label>
+                    {{ form_label(form.plainPassword.second) }}
+                    {#<label for="Username"> {{  'Confirm password' |trans }}</label>#}
                     {{ form_widget(form.plainPassword.second) }}
                 </div>
                 <div class="row" style="margin-top: 25px">
                     <div class="col-lg custom-link" style="padding-right: 0;">
                         <a href="/login">{{ 'log in' |trans}}</a>
                     </div>
+                    {{ form_rest(form) }}
                     <div class="col-lg" style="text-align: right;">
                         <input class="custom-button" type="submit" value="{{ 'submit'|trans }}" />
                     </div>
                 </div>
-            {{ form_rest(form) }}
-            {{ form_end(form) }}
+
+
         </form>
+        {{ form_end(form) }}
     </div>
 </div>
 

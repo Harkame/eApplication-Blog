@@ -56,6 +56,13 @@ class Post
      */
     private $image_url;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="author", type="string", length=255, nullable=true, unique=false)
+     */
+    private $author;
+
 
     /**
      * Get id
@@ -185,6 +192,30 @@ class Post
     public function getImageUrl()
     {
         return $this->image_url;
+    }
+
+    /**
+     * Set author
+     *
+     * @param string $author
+     *
+     * @return Post
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
+    /**
+     * Get author
+     *
+     * @return string
+     */
+    public function getAuthor()
+    {
+        return $this->author;
     }
 }
 

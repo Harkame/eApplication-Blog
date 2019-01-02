@@ -1,8 +1,11 @@
-back: __back
-Connexion: Connexion
-Inscription: __Inscription
-Profil: __Profil
-Home: __Home
-About: __About
-Connections: __Connections
-Register: __Register
+back: Back
+Connection: Connection
+Register: register
+Profil: Profil
+Home: Home
+About: About
+'log in': 'log in'
+submit: submit
+Username: username
+'Email address': 'email address'
+'Edit profil': 'edit profile'
