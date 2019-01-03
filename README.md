@@ -11,10 +11,16 @@ composer install
 
 composer update
 
-
 # Usage
 
-At root, run script "run.sh" and "database.sh"
+run script.sh
+
+## Other scripts (/script)
+
++ database.sh : Reset database (create schema + create sqlite.db)
++ database_prod.sh : Reset prod database (WARNING)
++ entity.sh : Generate Post entity
++ translate.sh : Update translation (If necessary)
 
 # Description
 
