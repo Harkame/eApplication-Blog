@@ -38,7 +38,7 @@ Executer le script "run.sh"
 
 Il y a 2 types d'utilisateurs
 + Connecté
-+ Non connecté (Anonyme)
++ Non connecté
 
 ### Connexion
 L'utilisateur n'est pas connecté,
@@ -145,6 +145,10 @@ https://startbootstrap.com/template-overviews/clean-blog/
 
 ## Les images
 La gestion est ultra simplifié, l'image est déposé depuis le formulaire (FileType), et enregistré dans le répertoire /web/image/ avec un identifiant unique. Le nom complet de l'image est associé à un poste et sera affiché dans la liste des postes.
+
+# Ce qui n'a pas été fait
++ Un groupe d'utilisateur ADMIN, pouvant editer ou supprimer TOUS les postes. Dans notre cas, seul l'auteur peut éditer ou supprimer son poste.
++ Une page pour la création, nous avons fais le choix de mettre le formulaire de création directement sur la page d'accueil, en dessous de la liste des postes, ce qui explique que le CrudController n'est pas d'action newPost
 
 # Commentaires sur l'UE
 + Dans ce même UE, nous avons un autre projet (faire un site web), il est probable que certaine personne ne savait pas faire de site web du tout et faire la partie Symfony avant la partie de M. Lafourcade (Plus libre) pourrait être intéressant.
