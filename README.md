@@ -66,7 +66,7 @@ L'utilisateur est connecté,
 
 ## Poste
 
-### Lire un article
+### Voir les articles
 
 Page par défault
 
@@ -76,6 +76,12 @@ Page par défault
 
 ### Poster un article
 Seul les utilisateurs connectés peuvent poster un article,
+
+Sur la page d'accueil, en bas de la liste des articles.
++ Remplire les champs
+++ Titre : Titre de l'article
+++ Contenu : Le contenu de l'article
+++ Image url  : Permet de déposer une image depuis l'ordinateur de l'utilisateur
 
 Si l'utilisateur est connecté, l'auteur sera <PseudoDeL'utilisateur>.
 
@@ -119,6 +125,9 @@ Une page de présentation, lien vers le répertoire github
 
 ## Traductions
 Le site est en grande partie traduit en Francais et en Anglais, les tests on été faits en locale en modifiant la valeur parameters->locale fr/en dans https://github.com/Harkame/eApplication-Blog/blob/master/app/config/config.yml
+
+## Les images
+La gestion est simple, les images 
 
 # Commentaires sur l'UE
 + Dans ce même eu, nous avons un autre projet (faire un site web), il est probable que certaine personne ne savait pas faire de site web du tout et faire la partie symfony avant la partie de M. Lafourcade pourrait être intéressant.
