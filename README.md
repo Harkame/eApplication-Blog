@@ -1,4 +1,4 @@
-# Authors
+# Auteurs
 + Louis DAVIAUD
 + Baptiste VOLLE
 
@@ -13,16 +13,18 @@ composer update
 
 # Usage
 
-run script "run.sh"
+Executer le script "run.sh"
 
 ## Other scripts (/script)
 
-+ database.sh : Reset database (create schema + create sqlite.db)
-+ database_prod.sh : Reset prod database (WARNING)
-+ entity.sh : Generate Post entity
-+ translate.sh : Update translation (If necessary)
++ database.sh : Réinitialise la base de données (create schema + create sqlite.db)
++ database_prod.sh : Réinitialise la base de données en production (DANGER)
++ entity.sh : Génère l'entitée Post (Post.php)
++ translate.sh : Mets à jour les traductions
 
-# Description
+# Descritpion
+
+## Inscription
 
 # Comments (UE)
         
