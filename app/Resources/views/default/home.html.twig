@@ -26,7 +26,7 @@
                 {% endif %}
                 <div class="card-body">
                     <h2 class="card-title">{{ post.getTitle() }}</h2>
-                    <p class="card-text article-text">{{ post.getContent() | slice(0, 20) }} ...</p>
+                    <p class="card-text article-text">{{ post.getContent() | slice(0, 20) }}</p>
                     <a class="btn btn-primary" href="post/{{ post.getId() }}">Details</a>
                 </div>
                 <div class="card-footer text-muted">
@@ -38,7 +38,8 @@
 
     {% form_theme form 'form/field.html.twig' %}
 
-    <h1 class="my-4 title" align="center">Article creation</h1>
+    <h1 align="center">{{ 'Post creation' | trans }}</h1>
+
     {% block form_row %}
         {% spaceless %}
             <div class="container">
