@@ -2,20 +2,24 @@
 + Louis DAVIAUD
 + Baptiste VOLLE
 
+# URL
+https://louis-daviaud-blog.herokuapp.com/
+
 # Compte
 
 + Nom d'utilisateur : TestUser
 + Adresse e-mail : test_user@gmail.com
 + Mot de passe : TestUser123
 
-# URL
-https://louis-daviaud-blog.herokuapp.com/
-
 # Installation
 
+``` bash
 composer install
+```
 
+``` bash
 composer update
+```
 
 # Usage
 
@@ -33,36 +37,36 @@ Executer le script "run.sh"
 ## Utilisateur
 
 Il y a 2 types d'utilisateurs
-        + Connecté
-        + Non connecté (Anonyme)
++ Connecté
++ Non connecté
 
 ### Connexion
+L'utilisateur n'est pas connecté,
 
-Si l'utilisateur n'est pas connecté,
 + dans le menu en haut à droite, une cliquer sur l'onglet "Connexion"
 + Saisire les identifiants
 
 ### Inscription
+L'utilisateur n'est pas connecté,
 
-Si l'utilisateur n'est pas connecté,
 + Dans le menu en haut à droite, cliquer sur l'onglet "Inscription"
 + Saisire les informations
 
 ### Profile
+L'utilisateur est connecté,
 
-Si l'utilisateur est connecté,
 + Dans le menu en haut à droite, cliquer sur l'onglet "Profile"
 
 Possibilité de modifier les informations du profile
 
 ### Deconnexion
+L'utilisateur est connecté,
 
-Si l'utilisateur est connecté,
 + Dans le menu en haut à droite, cliquer sur l'onglet "Deconnexion"
 
 ## Poste
 
-### Lire un article
+### Voir les articles
 
 Page par défault
 
@@ -70,32 +74,84 @@ Page par défault
 
 3 articles par page (Trie par date de publication décroissante), possibilité de lire d'anciens articles en cliquant sur "Anciens articles"
 
-### Poster un message
+### Poster un article
+Seul les utilisateurs connectés peuvent poster un article,
 
-Tout le monde peut poster un message.
+Sur la page d'accueil, en bas de la liste des articles.
++ Remplire les champs
+  + Titre : Titre de l'article
+  + Contenu : Le contenu de l'article
+  + Image url (OPTIONNEL)  : Permet de déposer une image depuis l'ordinateur de l'utilisateur, si aucune image n'est déposé, aucune image ne sera associé à l'article.
 
-Si l'utilisateur n'est pas connecté, l'auteur sera "Anonymous"
+Si l'utilisateur est connecté, l'auteur sera <PseudoDeL'utilisateur>.
 
-Si l'utilisateur est connecté, l'auteur sera <PseudoDeL'utilisateur>
+Si l'utilisateur n'est pas connecté, il est redirigé sur la page de connexion.
 
 ### Details d'un article
 
+Sur la liste des articles (Page d'accueil)
++ Cliquer sur le bouton "Détails"
+
+Cette page permet de lire l'article en entier.
+
 #### Supprimer un poste
 
-Seul les utilisateurs connectés peuvent supprimer un poste
+Seul un utilisateur connecté et auteur de l'article peut le supprimer.
+
+Sur la page détails de l'article.
++ Cliquer de "Supprimer"
 
 #### Editer un poste
 
-Seul les utilisateurs connectés peuvent supprimer un poste
+Seul un utilisateur connecté et auteur de l'article peut l'éditer.
+
+Sur la page détails de l'article.
++ Cliquer de "Editer"
+
+Vous pouvez choisire un nouveau titre et/ou un nouveau texte.
+
+Cliquer sur "Sauvegarder"
 
 ### A propos
 
-Une page en plus
+Une page de présentation, lien vers le répertoire github
 
-# Fonctionnement du blog (Backed)
+# Fonctionnement du blog (Backend)
+
+## Controlleurs
+
++ BlogController : Renvoie sur les différentes pages du blog
++ CrudController : Gère les différentes actions liées aux "Post" (Details/Edit/Delete), la création est gérer par le BlogController car directement sur la page d'accueil.
+
+## Traductions
+Le site est en grande partie traduit en Francais et en Anglais, les tests on été faits en locale en modifiant la valeur parameters->locale fr/en dans https://github.com/Harkame/eApplication-Blog/blob/master/app/config/config.yml
+
+### Formattage des dates
+
+Nous avons pris connaissance de la fonction "localizeddate('long', 'none', 'en')" et de l'exntesion de Twig : intl pour formatter les dates en fonction des locales, cependant nous n'avons pas réussit à faire fonctionner le formattage dans un autre format que "en", il semblerait que cela vienne de la version de php.
+
+## Gestion des utilisateur
+FOSUserBundle
+
+https://github.com/FriendsOfSymfony/FOSUserBundle
+
+## CSS
+
+Bootstrap
+
+### Exemple utilisé
+
+https://startbootstrap.com/template-overviews/clean-blog/
+
+## Les images
+La gestion est ultra simplifié, l'image est déposé depuis le formulaire (FileType), et enregistré dans le répertoire /web/image/ avec un identifiant unique. Le nom complet de l'image est associé à un poste et sera affiché dans la liste des postes.
+
+# Ce qui n'a pas été fait
++ Un groupe d'utilisateur ADMIN, pouvant editer ou supprimer TOUS les postes. Dans notre cas, seul l'auteur peut éditer ou supprimer son poste.
++ Une page pour la création, nous avons fais le choix de mettre le formulaire de création directement sur la page d'accueil, en dessous de la liste des postes, ce qui explique que le CrudController n'est pas d'action newPost
 
 # Commentaires sur l'UE
-+ Dans ce même eu, nous avons un autre projet (faire un site web), il est probable que certaine personne ne savait pas faire de site web du tout et faire la partie symfony avant la partie de M. Lafourcade pourrait être intéressant.
++ Dans ce même UE, nous avons un autre projet (faire un site web), il est probable que certaine personne ne savait pas faire de site web du tout et faire la partie Symfony avant la partie de M. Lafourcade (Plus libre) pourrait être intéressant.
         
 
              
