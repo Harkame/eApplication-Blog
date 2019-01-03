@@ -63,15 +63,11 @@ class BlogController extends Controller
             $post->setAuthor($username);
             $post->setAliasUrl($post->getTitle());
 
-            //if($post->getImageUrl() === null || $post->getImageUrl() === '')
-            //$post->setImageUrl('default_image.jpg');
-
-
             if ($post->getImageUrl() != null)
             {
                 $fileName = $this->generateUniqueFileName() . '.' . $post->getImageUrl()->guessExtension();
 
-                // Move the file to the directory where brochures are stored
+                /*
                 try {
                     $post->getImageUrl()->move(
                         $this->getParameter('image_directory'),
@@ -79,14 +75,12 @@ class BlogController extends Controller
                     );
                 } catch (FileException $e) {
                 }
+                */
             }
             else
                 $fileName = null;
 
-            // updates the 'brochure' property to store the PDF file name
-            // instead of its contents
             $post->setImageUrl($fileName);
-
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($post);
