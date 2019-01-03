@@ -41,27 +41,27 @@ Il y a 2 types d'utilisateurs
         + Non connecté (Anonyme)
 
 ### Connexion
+L'utilisateur n'est pas connecté,
 
-[x] L'utilisateur n'est pas connecté,
 + dans le menu en haut à droite, une cliquer sur l'onglet "Connexion"
 + Saisire les identifiants
 
 ### Inscription
+L'utilisateur n'est pas connecté,
 
-Si l'utilisateur n'est pas connecté,
 + Dans le menu en haut à droite, cliquer sur l'onglet "Inscription"
 + Saisire les informations
 
 ### Profile
+L'utilisateur est connecté,
 
-Si l'utilisateur est connecté,
 + Dans le menu en haut à droite, cliquer sur l'onglet "Profile"
 
 Possibilité de modifier les informations du profile
 
 ### Deconnexion
+L'utilisateur est connecté,
 
-Si l'utilisateur est connecté,
 + Dans le menu en haut à droite, cliquer sur l'onglet "Deconnexion"
 
 ## Poste
@@ -74,29 +74,51 @@ Page par défault
 
 3 articles par page (Trie par date de publication décroissante), possibilité de lire d'anciens articles en cliquant sur "Anciens articles"
 
-### Poster un message
+### Poster un article
+Seul les utilisateurs connectés peuvent poster un article,
 
-Tout le monde peut poster un message.
+Si l'utilisateur est connecté, l'auteur sera <PseudoDeL'utilisateur>.
 
-Si l'utilisateur n'est pas connecté, l'auteur sera "Anonymous"
-
-Si l'utilisateur est connecté, l'auteur sera <PseudoDeL'utilisateur>
+Si l'utilisateur n'est pas connecté, il est redirigé sur la page de connexion.
 
 ### Details d'un article
 
+Sur la liste des articles (Page d'accueil)
++ Cliquer sur le bouton "Détails"
+
+Cette page permet de lire l'article en entier.
+
 #### Supprimer un poste
 
-Seul les utilisateurs connectés peuvent supprimer un poste
+Seul un utilisateur connecté et auteur de l'article peut le supprimer.
+
+Sur la page détails de l'article.
++ Cliquer de "Supprimer"
 
 #### Editer un poste
 
-Seul les utilisateurs connectés peuvent supprimer un poste
+Seul un utilisateur connecté et auteur de l'article peut l'éditer.
+
+Sur la page détails de l'article.
++ Cliquer de "Editer"
+
+Vous pouvez choisire un nouveau titre et/ou un nouveau texte.
+
+Cliquer sur "Sauvegarder"
 
 ### A propos
 
-Une page en plus
+Une page de présentation, lien vers le répertoire github
 
-# Fonctionnement du blog (Backed)
+# Fonctionnement du blog (Backend)
+
+## Controlleurs
+
++ BlogController : Renvoie sur les différentes pages du blog
++ CrudController : Gère les différentes actions liées aux "Post" (Details/Edit/Delete), la création est gérer par le BlogController car directement sur la page d'accueil.
+
+## Traductions
+Le site est en grande partie traduit en Francais et en Anglais, les tests on été faits en locale en modifiant la valeur parameters->locale fr/en dans https://github.com/Harkame/eApplication-Blog/blob/master/app/config/config.yml
 
 # Commentaires sur l'UE
 + Dans ce même eu, nous avons un autre projet (faire un site web), il est probable que certaine personne ne savait pas faire de site web du tout et faire la partie symfony avant la partie de M. Lafourcade pourrait être intéressant.
