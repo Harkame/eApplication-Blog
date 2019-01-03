@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="96e3dde0-3c09-4784-9af1-7b94e8c79b31" name="Default Changelist" comment="add entity">
+    <list default="true" id="96e3dde0-3c09-4784-9af1-7b94e8c79b31" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/parameters.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/parameters.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,22 +50,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="32" selection-end-column="27" />
+            <state relative-caret-position="954">
+              <caret line="78" column="15" selection-start-line="78" selection-start-column="15" selection-end-line="78" selection-end-column="15" />
+              <folding>
+                <element signature="e#40#97#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/config_test.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="83" column="33" selection-start-line="83" selection-start-column="33" selection-end-line="83" selection-end-column="33" />
-              <folding>
-                <element signature="e#40#97#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="150">
+              <caret line="10" column="11" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -92,11 +91,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="60">
+              <caret line="4" column="35" lean-forward="true" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/parameters.yml.dist">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" selection-start-line="9" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -159,8 +167,8 @@
       <find>getuser</find>
       <find>username</find>
       <find>o</find>
-      <find>getImage(</find>
       <find>getImage</find>
+      <find>getImage(</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
@@ -215,11 +223,11 @@
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/script/entity.sh" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/PostType.php" />
-        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/home.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Post.php.old" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Post.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php" />
+        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
       </list>
     </option>
   </component>
@@ -450,7 +458,7 @@
       <workItem from="1546288679920" duration="2184000" />
       <workItem from="1546290903179" duration="23358000" />
       <workItem from="1546462510679" duration="9439000" />
-      <workItem from="1546514995333" duration="7981000" />
+      <workItem from="1546514995333" duration="8399000" />
     </task>
     <task id="LOCAL-00001" summary="init phpstorm">
       <created>1543506621486</created>
@@ -620,11 +628,18 @@
       <option name="project" value="LOCAL" />
       <updated>1546525702470</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="fix no image">
+      <created>1546525997917</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1546525997917</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87469000" />
+    <option name="totallyTimeSpent" value="87887000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -682,7 +697,8 @@
     <MESSAGE value="fix bug security url" />
     <MESSAGE value="improve image" />
     <MESSAGE value="add entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="add entity" />
+    <MESSAGE value="fix no image" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix no image" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="editorHistoryManager">
@@ -756,20 +772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml.dist">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="9" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config_test.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -914,13 +916,6 @@
     <entry file="file://$PROJECT_DIR$/image/feedcbb9d72a01aa3b86450380336dc4.jpeg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/home.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -942,6 +937,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config_test.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PostController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -954,11 +956,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="83" column="33" selection-start-line="83" selection-start-column="33" selection-end-line="83" selection-end-column="33" />
+        <state relative-caret-position="954">
+          <caret line="78" column="15" selection-start-line="78" selection-start-column="15" selection-end-line="78" selection-end-column="15" />
           <folding>
             <element signature="e#40#97#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml.dist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="35" lean-forward="true" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
         </state>
       </provider>
     </entry>
