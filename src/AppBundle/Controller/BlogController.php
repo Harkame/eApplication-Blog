@@ -54,10 +54,14 @@ class BlogController extends Controller
         if ($form->isSubmitted() && $form->isValid())
         {
 
-            $user_ = $this->getUser();
-            $user = $user_->getUser();
+            $user = $this->getUser();
 
-                $post->setAuthor($user);
+            if($user)
+                $username = $user->getUserName();
+            else
+                $username = 'Anonymous';
+
+                $post->setAuthor($username);
                 $post->setAliasUrl($post->getTitle());
             if($post->getImageUrl() === null || $post->getImageUrl() === '')
                 $post->setImageUrl('default_image.jpg');
