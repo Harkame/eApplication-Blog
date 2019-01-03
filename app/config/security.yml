@@ -5,7 +5,7 @@ security:
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: ROLE_ADMIN
+        ROLE_SUPER_ADMIN: ROLE_ADMINK
 
     providers:
         fos_userbundle:
@@ -24,5 +24,5 @@ security:
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/post/delete, role: ROLE_ADMIN }
-        - { path: ^/post/edit, role: ROLE_ADMIN }
+        - { path: ^/post/delete, role: ROLE_USER }
+        - { path: ^/post/edit, role: ROLE_USER }
