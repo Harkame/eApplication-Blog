@@ -37,8 +37,8 @@ Executer le script "run.sh"
 ## Utilisateur
 
 Il y a 2 types d'utilisateurs
-        + Connecté
-        + Non connecté (Anonyme)
++ Connecté
++ Non connecté (Anonyme)
 
 ### Connexion
 L'utilisateur n'est pas connecté,
@@ -79,9 +79,9 @@ Seul les utilisateurs connectés peuvent poster un article,
 
 Sur la page d'accueil, en bas de la liste des articles.
 + Remplire les champs
-        + Titre : Titre de l'article
-        + Contenu : Le contenu de l'article
-        + Image url (OPTIONNEL)  : Permet de déposer une image depuis l'ordinateur de l'utilisateur, si aucune image n'est déposé, aucune image ne sera associé à l'article.
+ + Titre : Titre de l'article
+ + Contenu : Le contenu de l'article
+ + Image url (OPTIONNEL)  : Permet de déposer une image depuis l'ordinateur de l'utilisateur, si aucune image n'est déposé, aucune image ne sera associé à l'article.
 
 Si l'utilisateur est connecté, l'auteur sera <PseudoDeL'utilisateur>.
 
