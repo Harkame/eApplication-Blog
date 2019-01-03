@@ -5,7 +5,6 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Post;
 
@@ -15,7 +14,6 @@ use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
-
 
 class BlogController extends Controller
 {
@@ -30,24 +28,34 @@ class BlogController extends Controller
     /**
      * @Route("/{page}", name="homepage", requirements = {"page" = "\d+"}, defaults={1} )
      */
-    //
     public function homeAction($page, Request $request)
     {
         $posts_repository = $this->getDoctrine()->getRepository('AppBundle:Post');
-        $posts = $posts_repository->getPosts($page, 3);
+        $posts = $posts_repository->getPosts($page, 4);
 
         $post = new Post();
 
-        $post->setPublished( new \DateTime());
-
         $form = $this->createForm(PostType::class, $post);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid())
         {
-            $check = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array('title' => $post->getTitle()));
+            $user = $this->getUser();
 
-            if($check != null)
+            if (!$user)
+            {
+                $this->addFlash(
+                    'error',
+                    'Unauthorized creation'
+                );
+
+                return $this->redirectToRoute('homepage', array('page' => 1));
+            }
+
+            $validTitle = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array('title' => $post->getTitle()));
+
+            if($validTitle != null)
             {
                 $request->getSession()
                     ->getFlashBag()
@@ -56,20 +64,15 @@ class BlogController extends Controller
                 return $this->redirectToRoute('homepage', array('page' => 1));
             }
 
-            $user = $this->getUser();
+            $post->setPublished( new \DateTime());
 
-            if ($user)
-                $username = $user->getUserName();
-            else
-                $username = 'Anonymous';
-
-            $post->setAuthor($username);
+            $post->setAuthor($user->getUserName());
 
             $post->setAliasUrl($post->getTitle());
 
             if ($post->getImageUrl() != null)
             {
-                $fileName = $this->generateUniqueFileName() . '.' . $post->getImageUrl()->guessExtension();
+                $fileName = md5(uniqid()) . '.' . $post->getImageUrl()->guessExtension();
 
                 try
                 {
@@ -98,10 +101,10 @@ class BlogController extends Controller
 
         $user = $this->getUser();
 
+        $username = null;
+
         if($user != null)
             $username = $user->getUsername();
-        else
-            $username = null;
 
         return $this->render('default/home.html.twig',
             array(
@@ -114,51 +117,19 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/post/{url_alias}" )
-     */
-    public function postDetailsAction($url_alias)
-    {
-
-        $post = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array('alias_url' => $url_alias))[0];
-
-        $user = $this->getUser();
-
-        if ($user)
-            $username = $user->getUsername();
-        else
-            $username = null;
-
-        if(!$post)
-            return $this->render('default/post.html.twig', array(
-                'post' => 'not found',
-                '$user' => $username
-            ));
-        else
-            return $this->render('default/post.html.twig', array(
-                'post' => $post,
-                'user' => $username
-            ));
-    }
-
-    /**
-     * @Route("/about" )
+     * @Route("/about", name="aboutpage" )
      */
     public function aboutAction()
     {
         $user= $this->getUser();
 
+        $username = null;
+
         if($user)
             $username = $user->getUsername();
-        else
-            $username = null;
 
         return $this->render('default/about.html.twig', array(
             'user' => $username
         ));
-    }
-
-    private function generateUniqueFileName()
-    {
-        return md5(uniqid());
     }
 }

@@ -17,18 +17,13 @@
                 {{ 'Posted on'|trans }} {{ post.getPublished()|localizeddate('long', 'none', 'en') }} {{ 'By'|trans }} {{ post.getAuthor() }}
             </span>
 
-
-            <a href="/1" id="custom-back">
-            <i class="fas fa-arrow-left"></i>{{ 'Back' | trans }}
-            </a>
-
             <div class="card-footer">
-                {% if  user  is same as (post.author) %}
-                    <a href="/post/edit/{{ post.getId() }}" class="custom-button-edit btn btn-warning float-right mx-1">{{ 'Edit'|trans }}</a>
+                {% if user is same as (post.author) %}
+                    <a href="/post/edit/{{ post.getId() }}" class="custom-button btn btn-warning float-right mx-1">{{ 'Edit'| trans }}</a>
                 {% endif %}
 
-                {% if user != null %}
-                    <a href="/post/delete/{{ post.getId() }}" class="custom-button btn btn-danger float-right mx-1">{{ 'Delete'|trans }}</a>
+                {% if user is same as (post.author) %}
+                    <a href="/post/delete/{{ post.getId() }}" class="custom-button btn btn-danger float-right mx-1 ">{{ 'Delete'| trans }}</a>
                 {%  endif %}
             </div>
         </div>
@@ -73,7 +68,7 @@
              border: none !important;
              padding: 8px 22px ;
              box-shadow: none !important;
-             color: white;
+             color: black;
              font-size: 14px;
              font-weight: 500;
              font-family: inherit !important;

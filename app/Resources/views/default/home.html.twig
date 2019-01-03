@@ -26,11 +26,11 @@
                 {% endif %}
                 <div class="card-body">
                     <h2 class="card-title">{{ post.getTitle() }}</h2>
-                    <p class="card-text article-text">{{ post.getContent() }}</p>
-                    <a class="btn btn-primary" href="post/{{ post.getAliasUrl() }}">Details</a>
+                    <p class="card-text article-text">{{ post.getContent() | slice(0, 20) }} ...</p>
+                    <a class="btn btn-primary" href="post/{{ post.getId() }}">Details</a>
                 </div>
                 <div class="card-footer text-muted">
-                    {{ 'Posted on'|trans }} {{ post.getPublished() | date('d-m-Y h:i:s')}} {{ 'By'|trans }} {{ post.getAuthor() }}
+                    {{ 'Posted on' |trans }} {{ post.getPublished() | date('d-m-Y h:i:s')}} {{ 'By' |trans }} {{ post.getAuthor() }}
                 </div>
             </div>
         </div>
