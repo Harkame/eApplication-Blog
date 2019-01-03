@@ -5,7 +5,7 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-use Symfony\Component\HttpFoundation\Response;
+
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Post;
 
@@ -24,8 +24,7 @@ class BlogController extends Controller
      */
     public function indexAction()
     {
-        $page = 1;
-        return $this->redirectToRoute('homepage', array('page' => $page));
+        return $this->redirectToRoute('homepage', array('page' => 1));
     }
 
     /**
@@ -34,15 +33,8 @@ class BlogController extends Controller
     //
     public function homeAction($page, Request $request)
     {
-        $nbPostsPage = 3;
-
-        $nbPages = 3;
-
         $posts_repository = $this->getDoctrine()->getRepository('AppBundle:Post');
-        $posts = $posts_repository->getPosts($page);
-
-        $firstPost =  ($nbPostsPage * $page) - $nbPostsPage + 1;
-        $lastPost =  $nbPostsPage * $page;
+        $posts = $posts_repository->getPosts($page, 3);
 
         $post = new Post();
 
@@ -51,7 +43,18 @@ class BlogController extends Controller
         $form = $this->createForm(PostType::class, $post);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $check = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array('title' => $post->getTitle()));
+
+            if($check != null)
+            {
+                $request->getSession()
+                    ->getFlashBag()
+                    ->add('error', 'Title already used');
+
+                return $this->redirectToRoute('homepage', array('page' => 1));
+            }
 
             $user = $this->getUser();
 
@@ -61,19 +64,17 @@ class BlogController extends Controller
                 $username = 'Anonymous';
 
             $post->setAuthor($username);
+
             $post->setAliasUrl($post->getTitle());
 
             if ($post->getImageUrl() != null)
             {
                 $fileName = $this->generateUniqueFileName() . '.' . $post->getImageUrl()->guessExtension();
 
-                $brochuresDir = $this->container->getParameter('kernel.root_dir').'/../web/image';
-
                 try
                 {
                     $post->getImageUrl()->move(
-//                        $this->getParameter('image_directory')
-                            $brochuresDir,
+                        $this->container->getParameter('kernel.root_dir').'/../web/image',
                         $fileName
                     );
                 }
@@ -89,6 +90,10 @@ class BlogController extends Controller
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($post);
             $entityManager->flush();
+
+            $request->getSession()
+                ->getFlashBag()
+                ->add('success', 'Post created');
         }
 
         $user = $this->getUser();
@@ -101,11 +106,7 @@ class BlogController extends Controller
         return $this->render('default/home.html.twig',
             array(
                 'posts' => $posts,
-                'nbPosts' => $nbPostsPage,
-                'nbPages' => $nbPages,
                 'page' => $page,
-                'firstPost' => $firstPost,
-                'lastPost' => $lastPost,
                 'form' => $form->createView(),
                 'user' => $username
             )
@@ -118,7 +119,7 @@ class BlogController extends Controller
     public function postDetailsAction($url_alias)
     {
 
-        $post = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array('alias_url' => $url_alias));
+        $post = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array('alias_url' => $url_alias))[0];
 
         $user = $this->getUser();
 

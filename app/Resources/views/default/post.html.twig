@@ -7,25 +7,28 @@
     <div class="row">
         <div class="custom-post col-lg">
             <h1>
-                {{post[0].title}}
+                {{post.title}}
             </h1>
             <hr>
             <p>
-                {{ post[0].content }}
+                {{ post.content }}
             </p>
-            <span>{{ 'Post on'|trans }} {{ post[0].published | date }}</span>
+            <span>
+                {{ 'Posted on'|trans }} {{ post.getPublished()|localizeddate('long', 'none', 'en') }} {{ 'By'|trans }} {{ post.getAuthor() }}
+            </span>
+
 
             <a href="/1" id="custom-back">
             <i class="fas fa-arrow-left"></i>{{ 'Back' | trans }}
             </a>
 
             <div class="card-footer">
-                {% if  user  is same as (post[0].author) %}
-                    <a href="/post/edit/{{ post[0].getId() }}" class="custom-button-edit btn btn-warning float-right mx-1">{{ 'Edit'|trans }}</a>
+                {% if  user  is same as (post.author) %}
+                    <a href="/post/edit/{{ post.getId() }}" class="custom-button-edit btn btn-warning float-right mx-1">{{ 'Edit'|trans }}</a>
                 {% endif %}
 
                 {% if user != null %}
-                    <a href="/post/delete/{{ post[0].getId() }}" class="custom-button btn btn-danger float-right mx-1">{{ 'Delete'|trans }}</a>
+                    <a href="/post/delete/{{ post.getId() }}" class="custom-button btn btn-danger float-right mx-1">{{ 'Delete'|trans }}</a>
                 {%  endif %}
             </div>
         </div>
