@@ -2,6 +2,12 @@
 + Louis DAVIAUD
 + Baptiste VOLLE
 
+# Compte
+
++ Nom d'utilisateur : TestUser
++ Adresse e-mail : test_user@gmail.com
++ Mot de passe : TestUser123
+
 # URL
 https://louis-daviaud-blog.herokuapp.com/
 
