@@ -26,23 +26,65 @@ Executer le script "run.sh"
 
 ## Utilisateur
 
+Il y a 2 types d'utilisateurs
+        + Connecté
+        + Non connecté (Anonyme)
+
 ### Connexion
+
+Si l'utilisateur n'est pas connecté,
++ dans le menu en haut à droite, une cliquer sur l'onglet "Connexion"
++ Saisire les identifiants
 
 ### Inscription
 
+Si l'utilisateur n'est pas connecté,
++ Dans le menu en haut à droite, cliquer sur l'onglet "Inscription"
++ Saisire les informations
+
 ### Profile
+
+Si l'utilisateur est connecté,
++ Dans le menu en haut à droite, cliquer sur l'onglet "Profile"
+
+Possibilité de modifier les informations du profile
 
 ### Deconnexion
 
+Si l'utilisateur est connecté,
++ Dans le menu en haut à droite, cliquer sur l'onglet "Deconnexion"
+
 ## Poste
+
+### Lire un article
+
+Page par défault
+
++ Dans le menu en haut à droite, une cliquer sur l'onglet "Accueil"
+
+3 articles par page (Trie par date de publication décroissante), possibilité de lire d'anciens articles en cliquant sur "Anciens articles"
 
 ### Poster un message
 
-### Supprimer un message
+Tout le monde peut poster un message.
 
-### Editer un message
+Si l'utilisateur n'est pas connecté, l'auteur sera "Anonymous"
+
+Si l'utilisateur est connecté, l'auteur sera <PseudoDeL'utilisateur>
+
+### Details d'un article
+
+#### Supprimer un poste
+
+Seul les utilisateurs connectés peuvent supprimer un poste
+
+#### Editer un poste
+
+Seul les utilisateurs connectés peuvent supprimer un poste
 
 ### A propos
+
+Une page en plus
 
 # Fonctionnement du blog (Backed)
 
