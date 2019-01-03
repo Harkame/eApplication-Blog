@@ -79,9 +79,9 @@ Seul les utilisateurs connectés peuvent poster un article,
 
 Sur la page d'accueil, en bas de la liste des articles.
 + Remplire les champs
-++ Titre : Titre de l'article
-++ Contenu : Le contenu de l'article
-++ Image url  : Permet de déposer une image depuis l'ordinateur de l'utilisateur
++ + Titre : Titre de l'article
++ + Contenu : Le contenu de l'article
++ + Image url  : Permet de déposer une image depuis l'ordinateur de l'utilisateur
 
 Si l'utilisateur est connecté, l'auteur sera <PseudoDeL'utilisateur>.
 
