@@ -47,7 +47,7 @@ class BlogController extends Controller
             {
                 $this->addFlash(
                     'error',
-                    'Unauthorized creation'
+                    'error.unauthorized.creation'
                 );
 
                 return $this->redirectToRoute('homepage', array('page' => 1));
@@ -59,7 +59,7 @@ class BlogController extends Controller
             {
                 $request->getSession()
                     ->getFlashBag()
-                    ->add('error', 'Title already used');
+                    ->add('error', 'error.title');
 
                 return $this->redirectToRoute('homepage', array('page' => 1));
             }
@@ -96,7 +96,7 @@ class BlogController extends Controller
 
             $request->getSession()
                 ->getFlashBag()
-                ->add('success', 'Post created');
+                ->add('success', 'post.created');
         }
 
         $user = $this->getUser();

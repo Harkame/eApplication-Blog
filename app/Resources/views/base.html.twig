@@ -28,7 +28,7 @@
             <div class="container">
                 {% if user is defined and user != null %}
                     <h1 class="title">
-                        {{ 'Hello'|trans  }}, {{ user }}
+                        {{ 'message.hello' | trans  }}, {{ user }}
                     </h1>
                 {% endif %}
                 <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -36,24 +36,24 @@
 
                         <li class="nav-item">
                             <a class="nav-link" href="/1">
-                                {{ 'Home'|trans }}
+                                {{ 'menu.home' | trans }}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/about">
-                                {{ 'About'|trans }}
+                                {{ 'menu.about' | trans }}
                             </a>
                         </li>
 
                         {% if user is not defined or user == null %}
                             <li class="nav-item">
                                 <a class="nav-link" href="/login">
-                                    {{ 'Login'|trans }}
+                                    {{ 'menu.login' | trans }}
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/register">
-                                    {{ 'Register'|trans }}
+                                    {{ 'menu.register' | trans }}
                                 </a>
                             </li>
                         {% endif %}
@@ -61,7 +61,7 @@
                         {% if user is defined and user != null %}
                             <li class="nav-item">
                                 <a class="nav-link" href="/profile">
-                                    {{ 'Profil'|trans }}
+                                    {{ 'menu.profil' | trans }}
                                 </a>
                             </li>
                         {%  endif %}
@@ -69,7 +69,7 @@
                         {% if user is defined and user != null %}
                             <li class="nav-item">
                                 <a class="nav-link" href="/logout">
-                                    {{ 'Logout'|trans }}
+                                    {{ 'menu.logout' | trans }}
                                 </a>
                             </li>
                         {% endif %}

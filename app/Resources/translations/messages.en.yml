@@ -1,27 +1,47 @@
 Back: 'Back'
-Connection: 'Connection'
-Register: 'register'
-Profil: 'Profil'
-Home: 'Home'
-About: 'About'
-Login: 'Login'
-submit: 'submit'
-Username: 'username'
-Email address: 'email address'
-Edit profil: 'edit profile'
-Hello: 'Hello'
-Logout: 'Logout'
-Posted on: 'Posted on '
-Delete: 'Delete'
-Edit: 'Edit'
-Older Posts: 'Older posts'
-By: 'by'
-Post created: 'Post created'
-Title already used: 'Title already used'
-Impossible to delete post: 'Impossible to delete post'
-Post deleted: 'Post deleted'
-Post modified: 'Post modified'
-Unauthorized modification: 'Unauthorized modification, please authentificate'
-Unauthorized suppression: 'Unauthorized suppression'
-Unauthorized creation: 'Unauthorized creation'
-Post creation: 'Post an article'
+
+menu:
+  register: 'register'
+  profile: 'Profile'
+  home: 'Home'
+  about: 'About'
+  login: 'Login'
+  logout: 'Logout'
+
+user:
+  Username: 'username'
+  Email address: 'email address'
+  edit:
+    profil: 'edit profile'
+
+post:
+  created: 'Post created'
+  deleted: 'Post deleted'
+  modified: 'Post modified'
+  details:
+    delete: 'Delete'
+    edit: 'Edit'
+  publication:
+    on: 'Posted on'
+    by: 'by'
+  modification:
+    title: 'Title'
+    content: 'Content'
+
+error:
+  title: 'Title already used'
+  delete: 'Impossible to delete post'
+  unauthorized:
+    modification: 'Unauthorized modification'
+    suppression: 'Unauthorized suppression'
+    creation: 'Unauthorized creation, please authentificate'
+
+message:
+  hello: 'Hello'
+
+home:
+  creation: 'Post an article'
+  older: 'Older posts'
+
+about:
+  text : 'Blog with Symfony 3 (Check README.md sur github)'

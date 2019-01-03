@@ -59,7 +59,7 @@ class CrudController extends Controller
 
             $this->addFlash(
                 'success',
-                'Post modified'
+                'post.modified'
             );
 
             return $this->redirectToRoute('homepage', array('page' => 1));
@@ -72,7 +72,7 @@ class CrudController extends Controller
             {
                 $this->addFlash(
                     'error',
-                    'Unauthorized modification'
+                    'error.unauthorized.modification'
                 );
 
                 return $this->redirectToRoute('homepage', array('page' => 1));
@@ -96,7 +96,7 @@ class CrudController extends Controller
 
             $this->addFlash(
                 'error',
-                'Impossible to delete post'
+                'error.delete'
             );
 
             return $this->redirectToRoute('homepage', array('page' => 1));
@@ -109,7 +109,7 @@ class CrudController extends Controller
             {
                 $this->addFlash(
                     'error',
-                    'Unauthorized suppression'
+                    'error.unauthorized.suppression'
                 );
 
                 return $this->redirectToRoute('homepage', array('page' => 1));
@@ -120,7 +120,7 @@ class CrudController extends Controller
 
         $this->addFlash(
             'success',
-            'Post deleted'
+            'post.deleted'
         );
 
         return $this->redirectToRoute('homepage', array('page' => 1));

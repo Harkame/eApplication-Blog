@@ -1,27 +1,47 @@
 Back: 'Retour'
-Connection: 'Connexion'
-Register: 'Inscription'
-Profil: 'Profil'
-Home: 'Accueil'
-About: 'A propos'
-Login: 'Connexion'
-submit: 'Valider'
-Username: 'Nom d''''utilisateur'
-Email address: 'Adresse mail'
-Edit profil: 'Editer le profil'
-Hello: 'Salut'
-Logout: 'Deconnexion'
-Posted on: 'Posté le '
-Delete: 'Supprimer'
-Edit: 'Editer'
-Older Posts: 'Anciens articles'
-By: 'par'
-Post created: 'Poste crée'
-Title already used : 'Titre déjà utilisé'
-Impossible to delete post: 'Impossible de supprimer le poste'
-Post deleted: 'Poste supprimé'
-Post modified: 'Poste modifié'
-Unauthorized creation: 'Création non autorisé, veuillez vous identifiez'
-Unauthorized modification: 'Modification non autorisé'
-Unauthorized suppression: 'Suppression non autorisé'
-Post creation: 'Poster un article'
+
+menu:
+  register: 'Inscription'
+  profile: 'Profil'
+  home: 'Accueil'
+  about: 'A propos'
+  login: 'Connexion'
+  logout: 'Deconnexion'
+
+user:
+  Username: 'Nom d''utilisateur'
+  Email address: 'Addresse e-mail'
+  edit:
+    profil: 'Editer le profil'
+
+post:
+  created: 'Poste crée'
+  deleted: 'Poste supprimé'
+  modified: 'Post modifié'
+  details:
+    delete: 'Supprimer'
+    edit: 'Editer'
+  publication:
+    on: 'Posté le'
+    by: 'par'
+  modification:
+    title: 'Titre'
+    content: 'Contenu'
+
+error:
+  title: 'Titre déjà utilisé'
+  delete: 'Impossible de supprimer le poste'
+  unauthorized:
+    modification: 'Modification non autorisé'
+    suppression: 'Suppression non autorisé'
+    creation: 'Création non autorisé, veuillez vous connectez'
+
+message:
+  hello: 'Salut'
+
+home:
+  creation: 'Poster un article'
+  older: 'Anciens postes'
+
+about:
+  text : 'Blog sous Symfony 3 (Voir README.md sur github)'

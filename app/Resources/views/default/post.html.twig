@@ -14,16 +14,16 @@
                 {{ post.content }}
             </p>
             <span>
-                {{ 'Posted on'|trans }} {{ post.getPublished()|localizeddate('long', 'none', 'en') }} {{ 'By'|trans }} {{ post.getAuthor() }}
+                {{ 'post.publication.on'|trans }} {{ post.getPublished()|localizeddate('long', 'none', 'en') }} {{ 'post.publication.by'|trans }} {{ post.getAuthor() }}
             </span>
 
             <div class="card-footer">
                 {% if user is same as (post.author) %}
-                    <a href="/post/edit/{{ post.getId() }}" class="custom-button btn btn-warning float-right mx-1">{{ 'Edit'| trans }}</a>
+                    <a href="/post/edit/{{ post.getId() }}" class="custom-button btn btn-warning float-right mx-1">{{ 'post.details.edit'| trans }}</a>
                 {% endif %}
 
                 {% if user is same as (post.author) %}
-                    <a href="/post/delete/{{ post.getId() }}" class="custom-button btn btn-danger float-right mx-1 ">{{ 'Delete'| trans }}</a>
+                    <a href="/post/delete/{{ post.getId() }}" class="custom-button btn btn-danger float-right mx-1 ">{{ 'post.details.delete'| trans }}</a>
                 {%  endif %}
             </div>
         </div>

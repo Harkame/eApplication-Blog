@@ -7,13 +7,13 @@
         {{ form_start(form) }}
         <div class="row">
             <div class="custom-post col-lg">
-                <h1>Title</h1>
+                <h1>{{ 'post.modification.title' | trans }}</h1>
                 <div class="input-field">
                     {{ form_widget(form.title, {'attr': {'value': post.title}}) }}
                 </div>
 
                 <hr>
-                <h1>Content</h1>
+                <h1>{{ 'post.modification.content' | trans }}</h1>
                 <div>
                     {{ form_widget(form.content, {'attr': {'value': post.content}}) }}
                 </div>
