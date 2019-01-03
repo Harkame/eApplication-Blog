@@ -1,11 +1,16 @@
-back: Retour
-Connection: Connexion
-Register: Inscription
-Profil: Profil
-Home: Accueil
+Back: 'Retour'
+Connection: 'Connexion'
+Register: 'Inscription'
+Profil: 'Profil'
+Home: 'Accueil'
 About: 'A propos'
-'log in''': Connexion
-submit: Valider
+Login: 'Connexion'
+submit: 'Valider'
 Username: 'Nom d''''utilisateur'
-'Email address': 'Adresse mail'
-'Edit profil''': 'Editer le profil'
+Email address: 'Adresse mail'
+Edit profil: 'Editer le profil'
+Hello: 'Salut, '
+Logout: 'Deconnexion'
+Posted on: 'Posté le '
+Delete: 'Supprimer'
+Edit: 'Editer'

@@ -11,7 +11,7 @@
                     <a class="btn btn-primary" href="post/{{ post.getAliasUrl() }}">Details</a>
                 </div>
                 <div class="card-footer text-muted">
-                    Posted on {{ post.getPublished() | date('d-m-Y h:i:s')}}K
+                    {{ 'Posted on'|trans }} {{ post.getPublished() | date('d-m-Y h:i:s')}}K
                 </div>
             </div>
         </div>
@@ -27,13 +27,12 @@
                     {{ form(form) }}
                 </div>
             </div>
-        {% endspaceless %}K
+        {% endspaceless %}
     {% endblock form_row %}
 
     <hr>
-    <!-- Pager -->
     <div class="clearfix">
-        <a class="btn btn-primary float-right" href="{{ path('homepage', {'page' :  page + 1} ) }} ">Older Posts </a>
+        <a class="btn btn-primary float-right" href="{{ path('homepage', {'page' :  page + 1} ) }} ">Older Posts</a>
     </div>
 
 

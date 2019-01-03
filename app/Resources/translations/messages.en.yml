@@ -1,11 +1,16 @@
-back: Back
-Connection: Connection
-Register: register
-Profil: Profil
-Home: Home
-About: About
-log in': log in
-submit: submit
-Username: username
-Email address: email address
-Edit profil: edit profile
+Back: 'Back'
+Connection: 'Connection'
+Register: 'register'
+Profil: 'Profil'
+Home: 'Home'
+About: 'About'
+Login: 'Login'
+submit: 'submit'
+Username: 'username'
+Email address: 'email address'
+Edit profil: 'edit profile'
+Hello: 'Hello, '
+Logout: 'Logout'
+Posted on: 'Posted on '
+Delete: 'Delete'
+Edit: 'Edit'

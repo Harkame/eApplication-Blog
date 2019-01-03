@@ -35,8 +35,6 @@ class BlogController extends Controller
     {
         $nbPostsPage = 3;
 
-        //$posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy([], ['published' => 'DESC']);
-
         $nbPages = 3;//ceil(count($posts)/($nbPostsPage));
 
         $posts_repository = $this->getDoctrine()->getRepository('AppBundle:Post');
@@ -57,9 +55,9 @@ class BlogController extends Controller
         {
 
             $user_ = $this->getUser();
-            $username = $user_->getUsername();
+            $user = $user_->getUser();
 
-                $post->setAuthor($username);
+                $post->setAuthor($user);
                 $post->setAliasUrl($post->getTitle());
             if($post->getImageUrl() === null || $post->getImageUrl() === '')
                 $post->setImageUrl('default_image.jpg');
@@ -71,6 +69,12 @@ class BlogController extends Controller
             //return $this->redirectToRoute('home');
         }
 
+        $user = $this->getUser();
+
+        if($user != null)
+            $username = $user->getUsername();
+        else
+            $username = null;
 
         return $this->render('default/home.html.twig',
             array(
@@ -80,13 +84,10 @@ class BlogController extends Controller
                 'page' => $page,
                 'firstPost' => $firstPost,
                 'lastPost' => $lastPost,
-                'form' => $form->createView()
+                'form' => $form->createView(),
+                'user' => $username
             )
         );
-
-        /*    [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]); */
     }
 
     /**
@@ -97,23 +98,22 @@ class BlogController extends Controller
 
         $post = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array('alias_url' => $url_alias));
 
-        $user_ = $this->getUser();
-        if ($user_) {
-            $username = $user_->getUsername();
-        }
-        else {
-            $username = null;
-        }
+        $user = $this->getUser();
 
+        if ($user)
+            $username = $user->getUsername();
+        else
+            $username = null;
 
         if(!$post)
             return $this->render('default/post.html.twig', array(
-                'post' => 'not found'
+                'post' => 'not found',
+                '$user' => $username
             ));
         else
             return $this->render('default/post.html.twig', array(
                 'post' => $post,
-                'username' => $username
+                'user' => $username
             ));
     }
 
@@ -122,6 +122,15 @@ class BlogController extends Controller
      */
     public function aboutAction()
     {
-        return $this->render('default/about.html.twig', array());
+        $user= $this->getUser();
+
+        if($user)
+            $username = $user->getUsername();
+        else
+            $username = null;
+
+        return $this->render('default/about.html.twig', array(
+            'user' => $username
+        ));
     }
 }

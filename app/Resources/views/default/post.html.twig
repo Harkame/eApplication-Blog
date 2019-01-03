@@ -13,17 +13,20 @@
             <p>
                 {{ post[0].content }}
             </p>
-            <span>Publié le {{ post[0].published | date }}</span>
+            <span>{{ 'Post on'|trans }} {{ post[0].published | date }}</span>
 
             <a href="/1" id="custom-back">
-            <i class="fas fa-arrow-left"></i>{{ 'back' | trans }}
+            <i class="fas fa-arrow-left"></i>{{ 'Back' | trans }}
             </a>
 
             <div class="card-footer">
-                {% if  username  is same as (post[0].author) %}
-                <a href="/post/edit/{{ post[0].getId() }}" class="custom-button-edit btn btn-warning float-right mx-1">Edit</a>
+                {% if  user  is same as (post[0].author) %}
+                    <a href="/post/edit/{{ post[0].getId() }}" class="custom-button-edit btn btn-warning float-right mx-1">{{ 'Edit'|trans }}</a>
                 {% endif %}
-                <a href="/post/delete/{{ post[0].getId() }}" class="custom-button btn btn-danger float-right mx-1">Delete</a>
+
+                {% if user != null %}
+                    <a href="/post/delete/{{ post[0].getId() }}" class="custom-button btn btn-danger float-right mx-1">{{ 'Delete'|trans }}</a>
+                {%  endif %}
             </div>
         </div>
     </div>
