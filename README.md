@@ -44,13 +44,13 @@ Il y a 2 types d'utilisateurs
 L'utilisateur n'est pas connecté,
 
 + dans le menu en haut à droite, une cliquer sur l'onglet "Connexion"
-+ Saisire les identifiants
++ Saisir les identifiants
 
 ### Inscription
 L'utilisateur n'est pas connecté,
 
 + Dans le menu en haut à droite, cliquer sur l'onglet "Inscription"
-+ Saisire les informations
++ Saisir les informations
 
 ### Profile
 L'utilisateur est connecté,
