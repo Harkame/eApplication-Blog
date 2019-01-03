@@ -42,7 +42,7 @@ Il y a 2 types d'utilisateurs
 
 ### Connexion
 
-Si l'utilisateur n'est pas connecté,
+[x] L'utilisateur n'est pas connecté,
 + dans le menu en haut à droite, une cliquer sur l'onglet "Connexion"
 + Saisire les identifiants
 
