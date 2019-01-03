@@ -126,11 +126,28 @@ Une page de présentation, lien vers le répertoire github
 ## Traductions
 Le site est en grande partie traduit en Francais et en Anglais, les tests on été faits en locale en modifiant la valeur parameters->locale fr/en dans https://github.com/Harkame/eApplication-Blog/blob/master/app/config/config.yml
 
+### Formattage des dates
+
+Nous avons pris connaissance de la fonction "localizeddate('long', 'none', 'en')" et de l'exntesion de Twig : intl pour formatter les dates en fonction des locales, cependant nous n'avons pas réussit à faire fonctionner le formattage dans un autre format que "en", il semblerait que cela vienne de la version de php.
+
+## Gestion des utilisateur
+FOSUserBundle
+
+https://github.com/FriendsOfSymfony/FOSUserBundle
+
+## CSS
+
+Bootstrap
+
+### Exemple utilisé
+
+https://startbootstrap.com/template-overviews/clean-blog/
+
 ## Les images
-La gestion est simple, les images 
+La gestion est ultra simplifié, l'image est déposé depuis le formulaire (FileType), et enregistré dans le répertoire /web/image/ avec un identifiant unique. Le nom complet de l'image est associé à un poste et sera affiché dans la liste des postes.
 
 # Commentaires sur l'UE
-+ Dans ce même eu, nous avons un autre projet (faire un site web), il est probable que certaine personne ne savait pas faire de site web du tout et faire la partie symfony avant la partie de M. Lafourcade pourrait être intéressant.
++ Dans ce même UE, nous avons un autre projet (faire un site web), il est probable que certaine personne ne savait pas faire de site web du tout et faire la partie Symfony avant la partie de M. Lafourcade (Plus libre) pourrait être intéressant.
         
 
              
