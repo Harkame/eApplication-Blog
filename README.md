@@ -13,7 +13,7 @@ composer update
 
 # Usage
 
-run script.sh
+run script "run.sh"
 
 ## Other scripts (/script)
 
