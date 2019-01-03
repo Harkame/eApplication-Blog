@@ -22,7 +22,7 @@ class PostType extends AbstractType
         $builder
             ->add('title', TextType::class)
             ->add('content', TextareaType::class)
-            ->add('image_url', TextType::class, array(
+            ->add('image_url', FileType::class, array(
                 'required'   => false
             ))
             ->add('save', SubmitType::class);
