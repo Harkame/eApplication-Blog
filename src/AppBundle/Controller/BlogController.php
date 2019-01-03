@@ -51,12 +51,11 @@ class BlogController extends Controller
         $form = $this->createForm(PostType::class, $post);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid())
-        {
+        if ($form->isSubmitted() && $form->isValid()) {
 
             $user = $this->getUser();
 
-            if($user)
+            if ($user)
                 $username = $user->getUserName();
             else
                 $username = 'Anonymous';
@@ -65,19 +64,24 @@ class BlogController extends Controller
             $post->setAliasUrl($post->getTitle());
 
             //if($post->getImageUrl() === null || $post->getImageUrl() === '')
-                //$post->setImageUrl('default_image.jpg');
+            //$post->setImageUrl('default_image.jpg');
 
-            $fileName = $this->generateUniqueFileName().'.'.$post->getImageUrl()->guessExtension();
 
-            // Move the file to the directory where brochures are stored
-            try {
-                $post->getImageUrl()->move(
-                    $this->getParameter('image_directory'),
-                    $fileName
-                );
-            } catch (FileException $e) {
-                // ... handle exception if something happens during file upload
+            if ($post->getImageUrl() != null)
+            {
+                $fileName = $this->generateUniqueFileName() . '.' . $post->getImageUrl()->guessExtension();
+
+                // Move the file to the directory where brochures are stored
+                try {
+                    $post->getImageUrl()->move(
+                        $this->getParameter('image_directory'),
+                        $fileName
+                    );
+                } catch (FileException $e) {
+                }
             }
+            else
+                $fileName = null;
 
             // updates the 'brochure' property to store the PDF file name
             // instead of its contents
