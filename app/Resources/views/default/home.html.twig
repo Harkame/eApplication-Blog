@@ -43,7 +43,7 @@
         <div class="container">
             <div class="card mb-4">
                 {% if post is defined and post.getImageUrl() != null %}
-                    <img class="card-img-top" height="350" alt="{{ post.getImageUrl() }}" src="/image/{{ post.getImageUrl() }}" />
+                    <img class="card-img-top" height="350" alt=" NOT FOUND : {{ post.getImageUrl() }}" src="/image/{{ post.getImageUrl() }}" />
                 {% endif %}
                 <div class="card-body">
                     <h2 class="card-title">{{ post.getTitle() }}</h2>
