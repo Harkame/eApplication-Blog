@@ -144,7 +144,7 @@ Le site est en grande partie traduit en Francais et en Anglais, les tests on ét
 
 Nous avons pris connaissance de la fonction "localizeddate('long', 'none', 'en')" et de l'extension de Twig : intl pour formatter les dates en fonction des locales, cependant nous n'avons pas réussit à faire fonctionner le formattage dans un autre format que "en", il semblerait que cela vienne de la version de PHP.
 
-## Gestion des utilisateur
+## Gestion des utilisateurs
 FOSUserBundle
 
 https://github.com/FriendsOfSymfony/FOSUserBundle
@@ -167,6 +167,10 @@ La création est également sécurisé mais "à la main", si un utilisateur non 
 
 ## Les formulaires
 Les formulaires de création et de mofication sont gérés par Symfony.
+
+## Base de données - Heroku
+
+PostgreSQL 9.5
 
 ## Validation W3C
 
