@@ -24,7 +24,7 @@ class PostType extends AbstractType
             ->add('image_url', FileType::class, array(
                 'required'   => false
             ))
-            ->add('save', SubmitType::class);
+            ->add('create', SubmitType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)

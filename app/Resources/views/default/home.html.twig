@@ -18,6 +18,27 @@
     {% endif %}
 
 
+    <div class="container" align="center">
+        {{ form_start(search_form) }}
+        <div class="row">
+            <div class="card mb-4 col-lg">
+                <div class="card-body">
+                    <h2 class="card-title">{{ 'message.search_post' | trans }}</h2>
+                    <div class="input-field">
+                        {{ form_widget(search_form.title) }}
+                    </div>
+
+                    <div class="card-footer">
+                        {{ form_widget(search_form.search) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ form_end(search_form) }}
+    </div>
+
+    <hr>
+
     {% for post in posts %}
         <div class="container">
             <div class="card mb-4">
@@ -36,15 +57,15 @@
         </div>
     {% endfor %}
 
-    {% form_theme form 'form/field.html.twig' %}
-
     <h1 class="text-center">{{ 'home.creation' | trans }}</h1>
+
+    {% form_theme create_form 'form/field.html.twig' %}
 
     {% block form_row %}
         {% spaceless %}
             <div class="container">
                 <div class="form_row">
-                    {{ form(form) }}
+                    {{ form(create_form) }}
                 </div>
             </div>
         {% endspaceless %}
@@ -54,8 +75,6 @@
     <div class="clearfix">
         <a class="btn btn-primary float-right" href="{{ path('homepage', {'page' :  page + 1} ) }} ">{{ 'home.older' | trans }}</a>
     </div>
-
-
 
     <hr>
 

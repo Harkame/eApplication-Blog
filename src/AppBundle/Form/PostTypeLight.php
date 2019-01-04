@@ -9,7 +9,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -21,7 +20,7 @@ class PostTypeLight extends AbstractType
         $builder
             ->add('title', TextType::class)
             ->add('content', TextareaType::class)
-            ->add('save', SubmitType::class);
+            ->add('edit', SubmitType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)

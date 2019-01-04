@@ -9,9 +9,13 @@ use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Post;
 
 use AppBundle\Form\PostType;
+use AppBundle\Form\PostSearchType;
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Tools\Pagination\Paginator;
+
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
@@ -34,12 +38,24 @@ class BlogController extends Controller
         $posts = $posts_repository->getPosts($page, 4);
 
         $post = new Post();
+        $post->setTitle('');
 
-        $form = $this->createForm(PostType::class, $post);
+        $searchForm = $this->createForm(PostSearchType::class, $post);
 
-        $form->handleRequest($request);
+        $searchForm->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid())
+        if ($searchForm->isSubmitted() && $searchForm->isValid())
+        {
+            $posts_repository = $this->getDoctrine()->getRepository('AppBundle:Post');
+
+            $posts = $posts_repository->getPostsLike($post->getTitle(), $page, 4);
+        }
+
+        $createForm = $this->createForm(PostType::class, $post);
+
+        $createForm->handleRequest($request);
+
+        if ($createForm->isSubmitted() && $createForm->isValid())
         {
             $user = $this->getUser();
 
@@ -110,8 +126,9 @@ class BlogController extends Controller
             array(
                 'posts' => $posts,
                 'page' => $page,
-                'form' => $form->createView(),
-                'user' => $username
+                'create_form' => $createForm->createView(),
+                'user' => $username,
+                'search_form' => $searchForm->createView()
             )
         );
     }

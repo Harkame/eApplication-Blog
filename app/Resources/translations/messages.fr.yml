@@ -38,6 +38,7 @@ error:
 
 message:
   hello: 'Salut'
+  search_post: 'Rechercher un poste'
 
 home:
   creation: 'Poster un article'
@@ -45,3 +46,10 @@ home:
 
 about:
   text : 'Blog sous Symfony 3 (Voir README.md sur github)'
+
+form:
+  title: 'Titre'
+  content: 'Contenu'
+  image: 'Image'
+  create: 'Créer'
+  search: 'Rechercher'
