@@ -49,12 +49,12 @@ class CrudController extends Controller
         $entityManager = $this->getDoctrine()->getManager();
         $post = $entityManager->getRepository(Post::class)->find($post_id);
 
-        $form = $this->createForm(PostTypeLight::class, $post);
-        $form->handleRequest($request);
+        $editForm = $this->createForm(PostTypeLight::class, $post);
+        $editForm->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid())
+        if ($editForm->isSubmitted() && $editForm->isValid())
         {
-            $post = $form->getData();
+            $post = $editForm->getData();
             $entityManager->flush();
 
             $this->addFlash(
@@ -80,7 +80,7 @@ class CrudController extends Controller
 
         return $this->render('default/editPost.html.twig', array(
             'post' => $post,
-            'form' => $form->createView()
+            'edit_form' => $editForm->createView()
         ));
     }
 

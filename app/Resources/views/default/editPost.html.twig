@@ -4,25 +4,25 @@
 {% block body %}
 
     <div class="container" align="center">
-        {{ form_start(form) }}
+        {{ form_start(edit_form) }}
         <div class="row">
             <div class="custom-post col-lg">
                 <h1>{{ 'post.modification.title' | trans }}</h1>
                 <div class="input-field">
-                    {{ form_widget(form.title, {'attr': {'value': post.title}}) }}
+                    {{ form_widget(edit_form.title, {'attr': {'value': post.title}}) }}
                 </div>
 
                 <hr>
                 <h1>{{ 'post.modification.content' | trans }}</h1>
                 <div>
-                    {{ form_widget(form.content, {'attr': {'value': post.content}}) }}
+                    {{ form_widget(edit_form.content, {'attr': {'value': post.content}}) }}
                 </div>
                 <div class="card-footer">
-                    {{ form_widget(form.edit) }}
+                    {{ form_widget(edit_form.edit) }}
                 </div>
             </div>
         </div>
-        {{ form_end(form) }}
+        {{ form_end(edit_form) }}
     </div>
 
 {% endblock %}
