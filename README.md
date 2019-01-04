@@ -72,7 +72,7 @@ L'utilisateur est connecté,
 
 ## Poste
 
-### Voir les articles
+### Voir les postes
 
 Page par défault (Accueil)
 
@@ -84,7 +84,7 @@ Page par défault (Accueil)
 
 Sur la page d'accueil
 
-+ Rentrer le titre de l'article rechercher, dans le champ juste en dessous de "Rechercher un poste", en haut de la liste des articles.
++ Rentrer le titre de l'article rechercher, dans le champ juste en dessous de "Rechercher un articl", en haut de la liste des articles.
 + Cliquer sur "Search"
 
 La nouvelle liste des articles correspondant à la recherche apparait.
@@ -111,7 +111,7 @@ Sur la liste des articles (Page d'accueil)
 
 Cette page permet de lire l'article en entier.
 
-#### Supprimer un poste
+#### Supprimer un article
 
 Seul un utilisateur connecté et auteur de l'article peut le supprimer.
 
@@ -122,7 +122,7 @@ Si l'utilisateur n'est pas l'auteur, un message d'erreur apparait.
 
 Si l'utilisateur n'est pas connecté, il est redirigé sur la page de connexion.
 
-#### Editer un poste
+#### Editer un article
 
 Seul un utilisateur connecté et auteur de l'article peut l'éditer.
 
@@ -169,12 +169,12 @@ Bootstrap
 https://startbootstrap.com/template-overviews/clean-blog/
 
 ## Les images
-La gestion est ultra simplifié, l'image est déposé depuis le formulaire (FileType), et enregistré dans le répertoire /web/image/ avec un identifiant unique. Le nom complet de l'image est associé à un poste et sera affiché dans la liste des postes. Il arrive que les images ne soit plus affiché en entête des articles.
+La gestion est ultra simplifié, l'image est déposé depuis le formulaire (FileType), et enregistré dans le répertoire /web/image/ avec un identifiant unique. Le nom complet de l'image est associé à un article et sera affiché dans la liste des articles. Il arrive que les images ne soit plus affiché en entête des articles.
 
 ## Securité
-Les routes d'édition et de suppression d'un poste sont sécurisé par FosUserBundle dans le fichier https://github.com/Harkame/eApplication-Blog/blob/master/app/config/security.yml. Si un utilisateur non connecté accède à ses routes, il est redirigé vers la page de connexion.
-Dans le cas ou un utilisateur est connecté mais n'est pas l'auteur d'un poste qu'il veut supprimer, un test est fait pour voir si l'utilisateur courant est l'auteur, si oui la modification/suppression est faite, sinon un message d'erreur apparait.
-La création est également sécurisé mais "à la main", si un utilisateur non connecté tente de poster un article, un message d'erreur apparait en lui demandant de se connecter.
+Les routes d'édition et de suppression d'un article sont sécurisé par FosUserBundle dans le fichier https://github.com/Harkame/eApplication-Blog/blob/master/app/config/security.yml. Si un utilisateur non connecté accède à ses routes, il est redirigé vers la page de connexion.
+Dans le cas ou un utilisateur est connecté mais n'est pas l'auteur d'un article qu'il veut supprimer, un test est fait pour voir si l'utilisateur courant est l'auteur, si oui la modification/suppression est faite, sinon un message d'erreur apparait.
+La création est également sécurisé mais "à la main", si un utilisateur non connecté tente de article un article, un message d'erreur apparait en lui demandant de se connecter.
 
 ## Les formulaires
 Les formulaires de création et de mofication sont gérés par Symfony.
