@@ -25,7 +25,7 @@ class PostRepository extends \Doctrine\ORM\EntityRepository
         $query = $this->_em->createQueryBuilder()
             ->select('post')
             ->from('AppBundle:Post','post')
-            ->where('post.title LIKE :title')
+            ->where('post.title LIKE lower(:title)')
             ->setParameter('title', '%'.$title.'%')
             ->orderBy('post.published','DESC');
 
