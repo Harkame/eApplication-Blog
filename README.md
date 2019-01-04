@@ -55,7 +55,7 @@ L'utilisateur n'est pas connecté,
 ### Profile
 L'utilisateur est connecté,
 
-+ Dans le menu en haut à droite, cliquer sur l'onglet "Profile"
++ Dans le menu en haut à droite, cliquer sur l'onglet "Profil"
 
 Possibilité de modifier les informations du profile
 
@@ -72,7 +72,7 @@ Page par défault
 
 + Dans le menu en haut à droite, une cliquer sur l'onglet "Accueil"
 
-3 articles par page (Trie par date de publication décroissante), possibilité de lire d'anciens articles en cliquant sur "Anciens articles"
+3 articles par page (Trie par date de publication décroissante), possibilité de lire plus articles en cliquant sur "Anciens articles"
 
 ### Poster un article
 Seul les utilisateurs connectés peuvent poster un article,
@@ -85,7 +85,7 @@ Sur la page d'accueil, en bas de la liste des articles.
 
 Si l'utilisateur est connecté, l'auteur sera <PseudoDeL'utilisateur>.
 
-Si l'utilisateur n'est pas connecté, il est redirigé sur la page de connexion.
+Si l'utilisateur n'est pas connecté, un message d'erreur apparait.
 
 ### Details d'un article
 
@@ -101,6 +101,10 @@ Seul un utilisateur connecté et auteur de l'article peut le supprimer.
 Sur la page détails de l'article.
 + Cliquer de "Supprimer"
 
+Si l'utilisateur n'est pas l'auteur, un message d'erreur apparait.
+
+Si l'utilisateur n'est pas connecté, il est redirigé sur la page de connexion.
+
 #### Editer un poste
 
 Seul un utilisateur connecté et auteur de l'article peut l'éditer.
@@ -111,6 +115,10 @@ Sur la page détails de l'article.
 Vous pouvez choisire un nouveau titre et/ou un nouveau texte.
 
 Cliquer sur "Sauvegarder"
+
+Si l'utilisateur n'est pas l'auteur, un message d'erreur apparait.
+
+Si l'utilisateur n'est pas connecté, il est redirigé sur la page de connexion.
 
 ### A propos
 
@@ -145,6 +153,10 @@ https://startbootstrap.com/template-overviews/clean-blog/
 
 ## Les images
 La gestion est ultra simplifié, l'image est déposé depuis le formulaire (FileType), et enregistré dans le répertoire /web/image/ avec un identifiant unique. Le nom complet de l'image est associé à un poste et sera affiché dans la liste des postes.
+
+## Securité
+Les routes d'édition et de suppression d'un poste sont sécurisé par FosUserBundle dans le fichier "security.xml". Si un utilisateur non connecté accède à ses routes, il est redirigé vers la page de connexion.
+Dans le cas ou un utilisateur est connecté mais n'est pas l'auteur d'un poste qu'il veut supprimer, un test est fait pour voir si l'utilisateur courant est l'auteur, si oui la modification/suppression est faite, sinon un message d'erreur apparait.
 
 # Ce qui n'a pas été fait
 + Un groupe d'utilisateur ADMIN, pouvant editer ou supprimer TOUS les postes. Dans notre cas, seul l'auteur peut éditer ou supprimer son poste.
