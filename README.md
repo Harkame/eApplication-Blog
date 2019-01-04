@@ -166,6 +166,10 @@ Les formulaires de création et de mofication sont gérés par Symfony.
 
 https://validator.w3.org
 
++ Accueil : https://validator.w3.org/nu/?doc=https%3A%2F%2Flouis-daviaud-blog.herokuapp.com%2F1
++ About : https://validator.w3.org/nu/?doc=https%3A%2F%2Flouis-daviaud-blog.herokuapp.com%2Fabout
++ Post : https://validator.w3.org/nu/?doc=http%3A%2F%2Flouis-daviaud-blog.herokuapp.com%2Fpost%2F11
+
 # Ce qui n'a pas été fait
 + Un groupe d'utilisateur ADMIN, pouvant editer ou supprimer TOUS les postes. Dans notre cas, seul l'auteur peut éditer ou supprimer son poste.
 + Une page pour la création, nous avons fait le choix de mettre le formulaire de création directement sur la page d'accueil, en dessous de la liste des postes, ce qui explique que le CrudController n'est pas d'action newPost
