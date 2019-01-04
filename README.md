@@ -11,6 +11,11 @@ https://louis-daviaud-blog.herokuapp.com/
 + Adresse e-mail : test_user@gmail.com
 + Mot de passe : TestUser123
 
+(Pour modification/suppression de poste d'un autre utilisateur)
++ Nom d'utilisateur : TestUser2
++ Adresse e-mail : test_user_2@hotmail.fr
++ Mot de passe : TestUser123
+
 # Installation
 
 ``` bash
