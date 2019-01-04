@@ -78,7 +78,7 @@ Page par défault
 
 + Dans le menu en haut à droite, une cliquer sur l'onglet "Accueil"
 
-3 articles par page (Trie par date de publication décroissante), possibilité de lire plus articles en cliquant sur "Anciens articles"
+4 articles par page (Trie par date de publication décroissante), possibilité de lire plus articles en cliquant sur "Anciens articles"
 
 ### Poster un article
 Seul les utilisateurs connectés peuvent poster un article,
