@@ -26,7 +26,7 @@ class PostRepository extends \Doctrine\ORM\EntityRepository
             ->select('post')
             ->from('AppBundle:Post','post')
             ->where('post.title LIKE :title')
-            ->setParameter('title', $title)
+            ->setParameter('title', '%'.$title.'%')
             ->orderBy('post.published','DESC');
 
         $query->setFirstResult(($page - 1) * $maximum_posts)
