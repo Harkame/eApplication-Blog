@@ -84,12 +84,12 @@ Page par défault (Accueil)
 
 Sur la page d'accueil
 
-+ Rentrer le titre de l'article rechercher, dans le champ juste en dessous de "Rechercher un articl", en haut de la liste des articles.
++ Rentrer le titre de l'article rechercher, dans le champ juste en dessous de "Rechercher un article", en haut de la liste des articles.
 + Cliquer sur "Search"
 
 La nouvelle liste des articles correspondant à la recherche apparait.
 
-Attention, la recherche est une recherche exacte sur le titre de l'article.
+La recherche n'est pas sensible aux majuscules/minuscules.
 
 ### Poster un article
 Seul les utilisateurs connectés peuvent poster un article,
