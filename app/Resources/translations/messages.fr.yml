@@ -15,8 +15,8 @@ user:
     profil: 'Editer le profil'
 
 post:
-  created: 'Poste crée'
-  deleted: 'Poste supprimé'
+  created: 'Article crée'
+  deleted: 'Article supprimé'
   modified: 'Post modifié'
   details:
     delete: 'Supprimer'
@@ -30,7 +30,7 @@ post:
 
 error:
   title: 'Titre déjà utilisé'
-  delete: 'Impossible de supprimer le poste'
+  delete: 'Impossible de supprimer l''article'
   unauthorized:
     modification: 'Modification non autorisé'
     suppression: 'Suppression non autorisé'
@@ -38,11 +38,11 @@ error:
 
 message:
   hello: 'Salut'
-  search_post: 'Rechercher un poste'
+  search_post: 'Rechercher un article'
 
 home:
-  creation: 'Poster un article'
-  older: 'Anciens postes'
+  creation: 'Articler un article'
+  older: 'Anciens articles'
 
 about:
   text : 'Blog sous Symfony 3 (Voir README.md sur github)'

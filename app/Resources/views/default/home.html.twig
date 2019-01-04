@@ -57,6 +57,14 @@
         </div>
     {% endfor %}
 
+    <hr>
+
+    <div class="clearfix">
+        <a class="btn btn-primary float-right" href="{{ path('homepage', {'page' :  page + 1} ) }} ">{{ 'home.older' | trans }}</a>
+    </div>
+
+    <hr>
+
     <h1 class="text-center">{{ 'home.creation' | trans }}</h1>
 
     {% form_theme create_form 'form/field.html.twig' %}
@@ -70,11 +78,6 @@
             </div>
         {% endspaceless %}
     {% endblock form_row %}
-
-    <hr>
-    <div class="clearfix">
-        <a class="btn btn-primary float-right" href="{{ path('homepage', {'page' :  page + 1} ) }} ">{{ 'home.older' | trans }}</a>
-    </div>
 
     <hr>
 
