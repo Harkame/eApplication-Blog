@@ -158,6 +158,9 @@ La gestion est ultra simplifié, l'image est déposé depuis le formulaire (File
 Les routes d'édition et de suppression d'un poste sont sécurisé par FosUserBundle dans le fichier "security.xml". Si un utilisateur non connecté accède à ses routes, il est redirigé vers la page de connexion.
 Dans le cas ou un utilisateur est connecté mais n'est pas l'auteur d'un poste qu'il veut supprimer, un test est fait pour voir si l'utilisateur courant est l'auteur, si oui la modification/suppression est faite, sinon un message d'erreur apparait.
 
+## Les formulaires
+Les formulaires de création et de mofication sont gérés par Symfony.
+
 # Ce qui n'a pas été fait
 + Un groupe d'utilisateur ADMIN, pouvant editer ou supprimer TOUS les postes. Dans notre cas, seul l'auteur peut éditer ou supprimer son poste.
 + Une page pour la création, nous avons fait le choix de mettre le formulaire de création directement sur la page d'accueil, en dessous de la liste des postes, ce qui explique que le CrudController n'est pas d'action newPost
