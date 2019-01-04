@@ -191,6 +191,7 @@ Modification ou suppression d'un poste d'un autre utilisateur.
 + Adresse e-mail : test_user_2@hotmail.fr
 + Mot de passe : TestUser123  
 <br/>
+
 + louis-daviaud-blog.herokuapp.com/post/delete/12
 + louis-daviaud-blog.herokuapp.com/post/edit/12
 
