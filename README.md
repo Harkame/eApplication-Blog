@@ -158,7 +158,7 @@ Bootstrap
 https://startbootstrap.com/template-overviews/clean-blog/
 
 ## Les images
-La gestion est ultra simplifié, l'image est déposé depuis le formulaire (FileType), et enregistré dans le répertoire /web/image/ avec un identifiant unique. Le nom complet de l'image est associé à un poste et sera affiché dans la liste des postes.
+La gestion est ultra simplifié, l'image est déposé depuis le formulaire (FileType), et enregistré dans le répertoire /web/image/ avec un identifiant unique. Le nom complet de l'image est associé à un poste et sera affiché dans la liste des postes. Il arrive que les images ne soit plus affiché en entête des articles.
 
 ## Securité
 Les routes d'édition et de suppression d'un poste sont sécurisé par FosUserBundle dans le fichier https://github.com/Harkame/eApplication-Blog/blob/master/app/config/security.yml. Si un utilisateur non connecté accède à ses routes, il est redirigé vers la page de connexion.
@@ -201,9 +201,9 @@ Modification ou suppression d'un poste d'un autre utilisateur.
 
 # Ce qui n'a pas été fait
 + Un groupe d'utilisateur ADMIN, pouvant editer ou supprimer TOUS les postes. Dans notre cas, seul l'auteur peut éditer ou supprimer son poste.
-+ Une page pour la création, nous avons fait le choix de mettre le formulaire de création directement sur la page d'accueil, en dessous de la liste des postes, ce qui explique que le CrudController n'est pas d'action newPost
++ Une page pour la création, nous avons fait le choix de mettre le formulaire de création directement sur la page d'accueil, en dessous de la liste des postes, ce qui explique que le CrudController n'est pas d'action "newPost"
 + Un système de recherche des postes
-+ Une gestion avancée des images
++ Une gestion avancée des images, avec dépôt des images sur un site de stockage par exemple.
 
 # Commentaires sur l'UE
 + Dans ce même UE, nous avons un autre projet (faire un site web), il est probable que certaine personne ne savait pas faire de site web du tout et faire la partie Symfony avant la partie de M. Lafourcade (Plus libre) pourrait être intéressant.
