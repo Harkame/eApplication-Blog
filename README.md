@@ -74,11 +74,22 @@ L'utilisateur est connecté,
 
 ### Voir les articles
 
-Page par défault
+Page par défault (Accueil)
 
 + Dans le menu en haut à droite, une cliquer sur l'onglet "Accueil"
 
 4 articles par page (Trie par date de publication décroissante), possibilité de lire plus articles en cliquant sur "Anciens articles"
+
+### Rechercher un article (Par son titre)
+
+Sur la page d'accueil
+
++ Rentrer le titre de l'article rechercher, dans le champ juste en dessous de "Rechercher un poste", en haut de la liste des articles.
++ Cliquer sur "Search"
+
+La nouvelle liste des articles correspondant à la recherche apparait.
+
+Attention, la recherche est une recherche exacte sur le titre de l'article.
 
 ### Poster un article
 Seul les utilisateurs connectés peuvent poster un article,
@@ -202,7 +213,6 @@ Modification ou suppression d'un poste d'un autre utilisateur.
 # Ce qui n'a pas été fait
 + Un groupe d'utilisateur ADMIN, pouvant editer ou supprimer TOUS les postes. Dans notre cas, seul l'auteur peut éditer ou supprimer son poste.
 + Une page pour la création, nous avons fait le choix de mettre le formulaire de création directement sur la page d'accueil, en dessous de la liste des postes, ce qui explique que le CrudController n'est pas d'action "newPost"
-+ Un système de recherche des postes
 + Une gestion avancée des images, avec dépôt des images sur un site de stockage par exemple.
 
 # Commentaires sur l'UE
