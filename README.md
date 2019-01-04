@@ -198,6 +198,8 @@ Modification ou suppression d'un poste d'un autre utilisateur.
 # Ce qui n'a pas été fait
 + Un groupe d'utilisateur ADMIN, pouvant editer ou supprimer TOUS les postes. Dans notre cas, seul l'auteur peut éditer ou supprimer son poste.
 + Une page pour la création, nous avons fait le choix de mettre le formulaire de création directement sur la page d'accueil, en dessous de la liste des postes, ce qui explique que le CrudController n'est pas d'action newPost
++ Un système de recherche des postes
++ Une gestion avancée des images
 
 # Commentaires sur l'UE
 + Dans ce même UE, nous avons un autre projet (faire un site web), il est probable que certaine personne ne savait pas faire de site web du tout et faire la partie Symfony avant la partie de M. Lafourcade (Plus libre) pourrait être intéressant.
