@@ -157,6 +157,7 @@ La gestion est ultra simplifié, l'image est déposé depuis le formulaire (File
 ## Securité
 Les routes d'édition et de suppression d'un poste sont sécurisé par FosUserBundle dans le fichier "security.xml". Si un utilisateur non connecté accède à ses routes, il est redirigé vers la page de connexion.
 Dans le cas ou un utilisateur est connecté mais n'est pas l'auteur d'un poste qu'il veut supprimer, un test est fait pour voir si l'utilisateur courant est l'auteur, si oui la modification/suppression est faite, sinon un message d'erreur apparait.
+La création est également sécurisé mais "à la main", si un utilisateur non connecté tente de poster un article, un message d'erreur apparait en lui demandant de se connecter.
 
 ## Les formulaires
 Les formulaires de création et de mofication sont gérés par Symfony.
