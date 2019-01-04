@@ -41,7 +41,7 @@ message:
   search_post: 'Rechercher un article'
 
 home:
-  creation: 'Pöster un article'
+  creation: 'Poster un article'
   older: 'Anciens articles'
 
 about:

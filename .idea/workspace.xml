@@ -4,11 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/app/Resources/translations/messages.en.yml" line="26" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96e3dde0-3c09-4784-9af1-7b94e8c79b31" name="Default Changelist" comment="dev seach">
+    <list default="true" id="96e3dde0-3c09-4784-9af1-7b94e8c79b31" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/translations/messages.fr.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/translations/messages.fr.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/home.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/translations/messages.fr.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+            <state relative-caret-position="109">
+              <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -490,7 +488,7 @@
       <workItem from="1546535053933" duration="13057000" />
       <workItem from="1546555458540" duration="3433000" />
       <workItem from="1546562778106" duration="1501000" />
-      <workItem from="1546607895034" duration="5911000" />
+      <workItem from="1546607895034" duration="6161000" />
     </task>
     <task id="LOCAL-00001" summary="init phpstorm">
       <created>1543506621486</created>
@@ -772,11 +770,25 @@
       <option name="project" value="LOCAL" />
       <updated>1546613102300</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="minor fix">
+      <created>1546613826702</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1546613826702</updated>
+    </task>
+    <task id="LOCAL-00042" summary="fix trans">
+      <created>1546613986695</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1546613986695</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117318000" />
+    <option name="totallyTimeSpent" value="117568000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -816,8 +828,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dev image" />
-    <MESSAGE value="reset" />
     <MESSAGE value="dev image + delete action" />
     <MESSAGE value="remove image" />
     <MESSAGE value="add image" />
@@ -841,7 +851,9 @@
     <MESSAGE value="rework trans" />
     <MESSAGE value="fix html" />
     <MESSAGE value="dev seach" />
-    <option name="LAST_COMMIT_MESSAGE" value="dev seach" />
+    <MESSAGE value="minor fix" />
+    <MESSAGE value="fix trans" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix trans" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="editorHistoryManager">
@@ -1132,8 +1144,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/translations/messages.fr.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+        <state relative-caret-position="109">
+          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
         </state>
       </provider>
     </entry>
