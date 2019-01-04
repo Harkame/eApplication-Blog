@@ -136,7 +136,7 @@ Le site est en grande partie traduit en Francais et en Anglais, les tests on ét
 
 ### Formattage des dates
 
-Nous avons pris connaissance de la fonction "localizeddate('long', 'none', 'en')" et de l'exntesion de Twig : intl pour formatter les dates en fonction des locales, cependant nous n'avons pas réussit à faire fonctionner le formattage dans un autre format que "en", il semblerait que cela vienne de la version de php.
+Nous avons pris connaissance de la fonction "localizeddate('long', 'none', 'en')" et de l'extension de Twig : intl pour formatter les dates en fonction des locales, cependant nous n'avons pas réussit à faire fonctionner le formattage dans un autre format que "en", il semblerait que cela vienne de la version de PHP.
 
 ## Gestion des utilisateur
 FOSUserBundle
