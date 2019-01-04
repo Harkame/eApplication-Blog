@@ -162,6 +162,10 @@ La création est également sécurisé mais "à la main", si un utilisateur non 
 ## Les formulaires
 Les formulaires de création et de mofication sont gérés par Symfony.
 
+## Validation W3C
+
+https://validator.w3.org
+
 # Ce qui n'a pas été fait
 + Un groupe d'utilisateur ADMIN, pouvant editer ou supprimer TOUS les postes. Dans notre cas, seul l'auteur peut éditer ou supprimer son poste.
 + Une page pour la création, nous avons fait le choix de mettre le formulaire de création directement sur la page d'accueil, en dessous de la liste des postes, ce qui explique que le CrudController n'est pas d'action newPost
