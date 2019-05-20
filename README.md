@@ -1,10 +1,3 @@
-# Auteurs
-+ Louis DAVIAUD
-+ Baptiste VOLLE
-
-# URL
-https://louis-daviaud-blog.herokuapp.com/
-
 # Compte
 
 + Nom d'utilisateur : TestUser
